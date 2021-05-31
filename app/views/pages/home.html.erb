@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
-<p>Test</p>
+
+<p>Find me in app/views/pages/home.html.erb</p>
+<h1>The video autoplay attribute</h1>
+
+<div class="home-video-wrapper">
+  <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
+</div>
