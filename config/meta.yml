@@ -1,0 +1,7 @@
+meta_product_name: "Fridgify"
+meta_title: "Fridgify - Find recipes in seconds"
+meta_description: "With Fridgify, you will always know what to cook tonight, enter the ingredients you already have and it will display the recipes you can make!"
+meta_image: "fridge-night.jpg" # should exist in `app/assets/images/`
+twitter_account: "@Fridgify2"   # required for Twitter Cards
+
+
