@@ -22,7 +22,6 @@
         }
         
         .inf-cards {
-            background-color: yellow;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -40,4 +39,10 @@
         
         .input {
             border-radius: 20px;
+        }
+        
+        .form-control {
+            border-radius: 25px;
+            box-shadow: 4px grey;
+            width: auto;
         }
