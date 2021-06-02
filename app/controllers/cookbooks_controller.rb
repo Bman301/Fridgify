@@ -1,7 +1,7 @@
 class CookbooksController < ApplicationController
 
   def index
-    @cookbook = Cookbook.all
+    @cookbooks = Cookbook.all
   end
 
   def create
