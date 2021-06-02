@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
       @recipes << Recipe.by_ingredient(ingredient)
     end
 
-    @recipes = @recipes.flatten-[nil]
+    @recipes = @recipes.flatten - [nil]
 
   end
 
