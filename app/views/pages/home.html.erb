@@ -3,23 +3,28 @@
       <div class="info-welcome ">
         <h1 class="display-1" style="color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
         <p class="question" style="color: white;margin-top: 50px;margin-left: 40px;">...tell me what’s in your fridge, and I’ll tell you what to cook!</p>
-    
+
         <div class="d-flex p-2">
-        <i class="fas fa-search"></i>
-          <div class="searchbar d-flex">
-            <input style="margin-left: 40px; width: 100% " id="search-focus" type="search" class="form-control"/>
-              <button type="button" class="btn btn-secondary">
-              <i class="fas fa-search"></i>
-          </button>
+          <i class="fas fa-search"></i>
+            <div class="searchbar d-flex">
+              <%= form_tag recipes_path, method: :get do %>
+                <%= text_field_tag :query, '', class: "form-control border-dark rounded-pill",
+                placeholder: "...What's in your fridge?"
+              %>
+            </div>
+           <div class="rounded">
+              <%= submit_tag "Search", class: "btn btn btn-dark mx-3" %>
+            <% end %>
           </div>
+              </button>
+            </div>
         </div>
         </div>
     </div>
-<div>
-</div>
+
     <div class="container d-flex justify-content-end mt-5" style="height: 400px">
       <div class="inf-cards row">
-        
+
         <div div class="inf-card col-sm justify-content-centerS">
           <%= cl_image_tag("diet_bgjlq1.png", :width=>70, :crop=>"scale") %>
           <h2>Find THE recipe</h2>
@@ -39,5 +44,3 @@
         </div>
       </div>
     </div>
-
-
