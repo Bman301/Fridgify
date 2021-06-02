@@ -4,9 +4,6 @@
    <%=recipe.comment %>
 <%end %> -->
 
-<div class="dark">
-	<main class="container py-4">
-		<div class="h1 text-center" id="pageHeaderTitle">My Cards Dark</div>
 
 		<article class="postcard dark blue">
 			<a class="postcard__img_link" href="#">
@@ -98,10 +95,11 @@
 		</article>
 	</main>
 </div>
+	<div class="container-fluid">
+       <p class="h1 text-left text-dark" id="pageHeaderTitle">*Insert search bar here* Recipes matching your query</p>
+        <div class="row">
 
-<div class="light">
-	<main class="container py-2">
-		<div class="h1 text-center text-dark" id="pageHeaderTitle">My Cards Dark</div>
+      <% @recipes.each do |recipe| %>
 
 		<article class="postcard light blue">
 			<a class="postcard__img_link" href="#">
@@ -193,3 +191,27 @@
 		</article>
 	</main>
 </div>
+         <div class="col-sm-12 col-md-6">
+            <article class="postcard light blue">
+                <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
+                    <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
+                </a>
+                <div class="postcard_text_container">
+                    <h1 class="postcard__title blue mt-4"><a href="<%=recipe_path(recipe.id)%>"><%= recipe.title %></a></h1>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt mb-3"><%= recipe.description.truncate_words(5) %></div>
+                           <ul class="postcard__tagbox">
+                                <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
+                                  <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
+                                <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
+                           <li class="tag__item"><i class="fas fa-star mr-2"></i>save</li>
+                         </ul>
+                </div>
+            </article>
+        </div>
+
+    <% end %>
+
+
+        
+</div></div>

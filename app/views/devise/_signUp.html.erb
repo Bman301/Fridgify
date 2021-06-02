@@ -2,12 +2,13 @@
 <div class="row">
 <div class="col-xs-12 mx-auto">
 
-<h2>Sign up</h2>
+
+<h2 class="text-center">Sign up</h2><br>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs" >
+  <div class="form-inputs">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -20,12 +21,11 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+<br>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Sign up", class: "btn btn-info"%>
   </div>
 <% end %>
-
 
 </div>
 </div>
