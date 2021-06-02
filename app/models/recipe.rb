@@ -14,5 +14,4 @@ class Recipe < ApplicationRecord
     Recipe.where(id: recipe_ids)
   end
 
-
 end
