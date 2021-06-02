@@ -2,6 +2,15 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show]
 
   def index
+    # @recipes = Recipe.all
+    user_ingredients = params[:query].split(", ")
+    @recipes = []
+    user_ingredients.each do |ingredient|
+      @recipes << Recipe.by_ingredient(ingredient)
+    end
+
+    @recipes = @recipes.flatten-[nil]
+
     @recipes = Recipe.all
   end
 
