@@ -4,7 +4,7 @@ class CookbooksController < ApplicationController
     @cookbooks = Cookbook.all
   end
 
-  
+
   def create
     @cookbook = Cookbook.new
     @user = current_user

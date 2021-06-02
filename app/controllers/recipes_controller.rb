@@ -12,7 +12,6 @@ class RecipesController < ApplicationController
 
     @recipes = @recipes.flatten-[nil]
 
-    @recipes = Recipe.all
   end
 
   def new
