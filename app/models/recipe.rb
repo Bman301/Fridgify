@@ -1,6 +1,5 @@
 class Recipe < ApplicationRecord
 
-  include PgSearch::Model
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
 
