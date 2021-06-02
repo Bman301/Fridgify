@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     # @recipes = Recipe.all
