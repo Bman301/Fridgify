@@ -3,8 +3,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon " >
   <a href="<%= root_path %>" class="navbar-brand">
-    <%= image_tag "fridgy-logo" %>
-  <p class="navbar-text" style="font-family: 'Montserrat', sans-serif;color: #FFA101; font-size: 2em">ridgify</p></a>
+  <p class="navbar-text" style="font-family: 'Montserrat', sans-serif;color: #BDA06A; font-size: 2em">Fridgify</p></a>
 
 
   <button class="navbar-toggler" style="background-color:none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +28,33 @@
         </li>
       <% else %>
         <li class="nav-item">
-        <a href="<%= new_user_session_path %>" class="btn btn-info" style="background-color:#B3DEE5">Login</a>
-          <a href="<%= new_user_registration_path %>" class="btn btn-info" style="background-color:#B3DEE5">Sign up</a>
+            <a href="#" data-toggle="modal" data-target="#modal" class="btn btn-info" style="background-color:#BDA06A">Login</a>
+           <a href="#" data-toggle="modal" data-target="#modalUp" class="btn btn-info" style="background-color:#BDA06A">Sign up</a>
+
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+
+
+
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <%= render "devise/login" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <%= render "devise/signUp" %>
+        </div>
+      </div>
+    </div>
+  </div>

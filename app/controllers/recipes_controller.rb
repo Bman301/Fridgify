@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show]
 
   def index
-    @recipe = Recipe.all
+    @recipes = Recipe.all
   end
 
   def new
