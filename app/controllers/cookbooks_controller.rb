@@ -14,15 +14,20 @@ class CookbooksController < ApplicationController
     @cookbook.user = @user
 
     if  @cookbook.save
-      redirect_to recipe_path(@recipe)
+      flash[:notice] = 'Saved!'
+      redirect_back(fallback_location: recipes_path)
     else
-      render "recipes/show"
+        flash[:notice] = 'Not saved, try again!'
+        redirect_back(fallback_location: recipes_path)
     end
 
   end
 
-  # def destroy
-  #   @cookbook = Cookbook.find()
-  # end
+   def destroy
+    @cookbook = Cookbook.find(params[:id])
+    @cookbook.destroy
+    flash[:alert] = 'Deleted...'
+    redirect_back(fallback_location: recipes_path)
+   end
 
 end
