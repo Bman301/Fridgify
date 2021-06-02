@@ -1,10 +1,5 @@
 
 <h1>YOOO  </h1>
-<!-- <%@recipes.each do |recipe| %>
-   <%=recipe.comment %>
-<%end %> -->
-
-
 		<article class="postcard dark blue">
 			<a class="postcard__img_link" href="#">
 				<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
@@ -204,8 +199,8 @@
                                 <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
                                 <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
-                                 
-                                  
+
+
 
 
                                 <% @my_user_id == current_user.id%>
@@ -216,13 +211,13 @@
                                      <%= link_to recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do %>
                                           <li class="tag__item" style="color:white"><i class="fas fa-star mr-2" ></i>save</li>
                                      <%end%>
-  
+
                                   <% else %>
-                              
+
                                         <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete do %>
                                     <li class="tag__item"><i class="fas fa-star mr-2"></i>saved</li>
                                  <%end%>
-                               
+
                              <% end %>
 
                          </ul>
@@ -232,5 +227,3 @@
 
                                   <% end %>
     </div></div>
-
-
