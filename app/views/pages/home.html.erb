@@ -1,8 +1,8 @@
     <div class="home-video-wrapper">
       <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
       <div class="info-welcome ">
-        <h1 class="display-1" style="color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
-        <p class="question" style="color: white;margin-top: 50px;margin-left: 40px;">...tell me what’s in your fridge, and I’ll tell you what to cook!</p>
+        <h1 class="display-1" style="font-family: 'Montserrat';color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
+        <p class="question" style="font-family: 'Montserrat';color: white;margin-top: 50px;margin-left: 40px;">Tell me what’s in your fridge, and I’ll tell you what to cook!</p>
     
         <div class="d-flex p-2">
         <i class="fas fa-search"></i>
@@ -22,13 +22,13 @@
         <div class="inf-card col-sm ">
           <%= cl_image_tag("voice-message_eptp68.png", :width=>70, :crop=>"scale") %>
           <h2 class="">Voice&type input</h2>
-          <p class="">Type or tell us what you have.</p>
+          <p class="">Type or tell us what you have on your fridge.</p>
         </div>
 
         <div div class="inf-card col-sm justify-content-centerS">
           <%= cl_image_tag("diet_bgjlq1.png", :width=>70, :crop=>"scale") %>
-          <h2>Find THE recipe</h2>
-          <p class="">Exactly with what you have.</p>
+          <h2>Find "the" recipe</h2>
+          <p class="">Exactly with what you have at home.</p>
         </div>
 
         <div class="inf-card col-sm">
@@ -40,11 +40,11 @@
       </div>
     </div>
     
-    <div class="d-flex comments-container">
+    <div class="comment-card d-flex comments-container">
     <div class="col-sm-4 mt-3">
-      <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
-        <p class="mb-0 mt-2 font-italic">"As a exchange student and not having much on my fridge... I can tell FRIDGIFY what I have and it gives me
+      <blockquote class="blockquote blockquote-custom bg-white p-3 shadow rounded">
+        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-black"></i></div>
+        <p class="mb-0 mt-2 font-montserrat">"As a exchange student and not having much on my fridge... I can tell FRIDGIFY what I have and it gives me
         lots of recipes, just awesome! <a href="#" class="text-info">@FRIDGIFY</a>."</p>
         <footer class="blockquote-footer pt-4 mt-4 border-top">USER_NAME
         </footer>
@@ -52,20 +52,20 @@
       </blockquote>
     </div>
 
-    <div class="col-sm-4 mt-3">
-      <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
-        <p class="mb-0 mt-2 font-italic">COMMENT_2 <a href="#" class="text-info">@FRIDGIFY</a>."</p>
+    <div class="comment-card col-sm-4 mt-3">
+      <blockquote class="blockquote blockquote-custom bg-white p-3 shadow rounded">
+        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-black"></i></div>
+        <p class="mb-0 mt-2 font-montserrat">COMMENT_2 <a href="#" class="text-info">@FRIDGIFY</a>."</p>
         <footer class="blockquote-footer pt-4 mt-4 border-top">USER_NAME
         </footer>
         <img src="https://i.redd.it/fj1yfji0dpo61.jpg" class="card-trip-user avatar-bordered" />
       </blockquote>
     </div>
 
-    <div class="col-sm-4 mt-3">
-      <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
-        <p class="mb-0 mt-2 font-italic">COMMENT_3 <a href="#" class="text-info">@FRIDGIFY</a>."</p>
+    <div class="comment-card col-sm-4 mt-3">
+      <blockquote class="blockquote blockquote-custom bg-white p-3 shadow rounded">
+        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-black"></i></div>
+        <p class="mb-0 mt-2 font-montserrat">COMMENT_3 <a href="#" class="text-info">@FRIDGIFY</a>."</p>
         <footer class="blockquote-footer pt-4 mt-4 border-top">USER_NAME
         </footer>
         <img src="https://i.redd.it/fj1yfji0dpo61.jpg" class="card-trip-user avatar-bordered" />
