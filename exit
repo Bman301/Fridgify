@@ -1,0 +1,26 @@
+=> [[32m#<Recipe:0x00005580917cd410[0m
+  id: [1;34m25[0m,
+  comment: [1;36mnil[0m,
+  image: [31m[1;31m"[0m[31mhttps://spoonacular.com/recipeImages/652330-556x370.jpg[1;31m"[0m[31m[0m,
+  title: [31m[1;31m"[0m[31mMommie's Seafood Enchiladas[1;31m"[0m[31m[0m,
+  prep_time: [31m[1;31m"[0m[31m50 mins[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mThe recipe Mommie's Seafood Enchiladas is ready in approximately 45 minutes and is definitely a great gluten free and pescatarian option for lovers of Mexican food. This main course has 460 calories. If you have salt, butter, tortillas, and a few other ingredients on hand, you can make it.[1;31m"[0m[31m[0m,
+  serving_size: [31m[1;31m"[0m[31m8 servings[1;31m"[0m[31m[0m,
+  rating: [1;35m2.8[0m,
+  difficulty_level: [31m[1;31m"[0m[31mHard[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mThu[0m, [1;34m03[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m17[0m:[1;34m10[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mThu[0m, [1;34m03[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m17[0m:[1;34m10[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Recipe:0x00005580918a2d90[0m
+  id: [1;34m27[0m,
+  comment: [1;36mnil[0m,
+  image: [31m[1;31m"[0m[31mhttps://spoonacular.com/recipeImages/633119-556x370.jpg[1;31m"[0m[31m[0m,
+  title: [31m[1;31m"[0m[31mAvocado & Tomato Salad Topped with Grilled Shrimp[1;31m"[0m[31m[0m,
+  prep_time: [31m[1;31m"[0m[31m45 min[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mAvocado & Tomato Salad Topped with Grilled Shrimp might be just the main course you are searching for. This recipe serves 2 and costs $9.75 per serving. One serving contains 555 calories. It is a good option if you're following a gluten free, dairy free, and pescatarian diet. If you have plum tomatoes, limes, garlic powder, and a few other ingredients on hand, you can make it. The Fourth Of July will be even more special with this recipe. From preparation to the plate, this recipe takes roughly 45 minutes.[1;31m"[0m[31m[0m,
+  serving_size: [31m[1;31m"[0m[31m2 servings[1;31m"[0m[31m[0m,
+  rating: [1;35m5.0[0m,
+  difficulty_level: [31m[1;31m"[0m[31m45 min[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mThu[0m, [1;34m03[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m17[0m:[1;34m10[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mThu[0m, [1;34m03[0m [1;34;4mJun[0m [1;34m2021[0m [1;34m17[0m:[1;34m10[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]
