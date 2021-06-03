@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
 
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
+  has_many :cookbooks
 
   def self.by_ingredient(ingredient_name)
     # 1. Search for ingredients that match name
