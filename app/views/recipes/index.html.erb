@@ -9,7 +9,8 @@ body {
 <div class="row">
 <div class="col-2"></div>
 <div class="col-9 d-flex justify-content-center">
-                  <div class="searchbar d-flex p-3 m-3" style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
+<div class="mic m-3 p-3" id="voice-recognition"><i style="color:black;font-size:30px" class="fas fa-microphone btn mx-3 w-100 p-2 h-100"></i></div>
+                  <div class="searchbar p-3 m-3 d-flex align-items-center" style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
            <span style="width:100%; font-size:30px">   <%= form_tag recipes_path, method: :get do %>
                 <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
             </div>
