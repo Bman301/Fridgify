@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+=======
+
+
+<<<<<<< HEAD
+<%@recipes.each do |recipe| %>
+   <%=recipe.id %>
+<%end %>
+=======
+	<div class="container-fluid">
+       <p class="h1 text-left text-dark" id="pageHeaderTitle">*WORKING VS Insert search bar here* Recipes matching your query</p>
+        <div class="row">
+
+      <% @recipes.each do |recipe| %>
+
+         <div class="col-sm-12 col-md-6">
+            <article class="postcard light blue">
+                <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
+                    <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
+                </a>
+                <div class="postcard_text_container">
+                    <h1 class="postcard__title blue mt-4"><a href="<%=recipe_path(recipe.id)%>"><%= recipe.title %></a></h1>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt mb-3"><%= recipe.description.truncate_words(5) %></div>
+                           <ul class="postcard__tagbox">
+                                <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
+                                  <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
+                                <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
+                                 
+                                  
+
+
+                                <% @my_user_id == current_user.id%>
+                               <%  mine = Cookbook.select( :user_id == current_user.id ) %>
+                               <% mine2 = mine.select(:recipe_id == recipe.id) %>
+                                 <% if recipe.cookbooks.where(user: current_user).empty?  %>
+
+                                     <%= link_to recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do %>
+                                          <li class="tag__item" style="color:white"><i class="fas fa-star mr-2" ></i>save</li>
+                                     <%end%>
+  
+                                  <% else %>
+                              
+                                        <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete do %>
+                                    <li class="tag__item"><i class="fas fa-star mr-2"></i>saved</li>
+                                 <%end%>
+                               
+                             <% end %>
+
+                         </ul>
+                </div>
+            </article>
+        </div>
+
+                                  <% end %>
+    </div></div>
+>>>>>>> d0e630dd8523dfe3e31fbf219a0cd77e947c643b
+>>>>>>> 9d97b368181db6528b032e2844030008039827eb

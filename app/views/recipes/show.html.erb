@@ -1,13 +1,33 @@
+<div class="container-fluid r-wrapper">
 
-<h1> <%= @recipe.title %> </h1>
+<div class="r-info-card">
+  <div class="r-title">
+    <h1> <%= @recipe.title %> </h1>
+  </div>
 
-<h2> <%= @recipe.comment %> </h2>
-<h2> <%= @recipe.prep_time %> </h2>
+  <div class="r-comment">
+    <h2> <%= @recipe.comment %> </h2>
+  </div>
 
-<h2> <%= @recipe.serving_size %> </h2>
-<h2> <%= @recipe.rating %> </h2>
-<h2> <%= @recipe.difficulty_level %> </h2>
-<br>
+  <div class="p-time">
+    <h2> <%= @recipe.prep_time %> </h2>
+  </div>
 
-<img src="<%= @recipe.image %>" alt="image" class="w-100 img-fluid">
+  <div class="r-serving">
+    <h2> <%= @recipe.serving_size %> </h2>
+  </div>
+</div>
 
+  <div class="r-rating">
+  <h2> <%= @recipe.rating %> </h2>
+  </div>
+
+  <div class="r-difficulty">
+  <h2> <%= @recipe.difficulty_level %> </h2>
+  </div>
+
+  <div class="r-img">
+  <img src="<%= @recipe.image %>" alt="image" class="w-100 img-fluid">
+  </div>
+
+</div>
