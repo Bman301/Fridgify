@@ -4,9 +4,7 @@
       <div class="info-welcome ">
         <h1 class="display-1" style="font-family: 'Montserrat';color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
         <p class="question" style="font-family: 'Montserrat';color: white;margin-top: 25px;margin-left: 40px;">Tell me what's in your fridge, and I'll tell you what to cook!</p>
-               
-               
-                 <div class="searchbar d-flex">
+              <div class="searchbar d-flex">
               <%= form_tag recipes_path, method: :get do %>
                 <%= text_field_tag :query, '', class: "form-control border-dark rounded-pill",
                 placeholder: "...What's in your fridge?"
@@ -21,7 +19,7 @@
         </div>
         </div>
     </div>
-    
+
 </div>
     <div class="container-fluid d-flex justify-content-center pt-5" style="background-color: #1d1c21" >
       <div class="inf-cards row">
