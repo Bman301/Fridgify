@@ -1,4 +1,4 @@
-	
+
 <style>
 body {
   background-color: #F4F4F4;
@@ -12,13 +12,14 @@ body {
 <div class="mic m-3 p-3" id="voice-recognition"><i style="color:black;font-size:30px" class="fas fa-microphone btn mx-3 w-100 p-2 h-100"></i></div>
                   <div class="searchbar p-3 m-3 d-flex align-items-center" style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
            <span style="width:100%; font-size:30px">   <%= form_tag recipes_path, method: :get do %>
-                <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
+                <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", id:"SpeechToText", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
             </div>
            <div class="rounded p-3 m-3">
               <%= submit_tag "Search", class: "btn btn-info" %>
             <% end %>
           </div></div></div>
         <div class="row mt-5">
+        
 
       <% @recipes.each do |recipe| %>
 
@@ -35,8 +36,8 @@ body {
                                 <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
                                 <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
-                                 
-                                  
+
+
 
 
                                 <% @my_user_id == current_user.id%>
@@ -47,13 +48,13 @@ body {
                                      <%= link_to recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do %>
                                           <li class="tag__item" style="color:black"><i class="far fa-bookmark mr-2" ></i><span style="color:white">save</span></li>
                                      <%end%>
-  
+
                                   <% else %>
-                              
+
                                         <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete do %>
                                     <li class="tag__item"><i class="fas fa-bookmark mr-2"></i><span style="color:white">saved</span></li>
                                  <%end%>
-                               
+
                              <% end %>
 
                          </ul>
