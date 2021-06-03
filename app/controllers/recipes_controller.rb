@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
 
-    user_ingredients = params[:query].split(", ")
+    user_ingredients = params[:query].split(" ")
     @recipes = []
     user_ingredients.each do |ingredient|
       @recipes << Recipe.by_ingredient(ingredient)
