@@ -1,7 +1,7 @@
 	
 <style>
 body {
-  background-color: #1D1C21;
+  background-color: #F4F4F4;
 }
 </style>
 
@@ -22,14 +22,14 @@ body {
       <% @recipes.each do |recipe| %>
 
          <div class="col-sm-12 col-md-6">
-            <article class="postcard light blue" style="box-shadow: 5px 5px 15px 5px #957F58;">
+            <article class="postcard postcard-styling">
                 <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
                     <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
                 </a>
-                <div class="postcard_text_container">
-                    <h1 class="postcard__title blue mt-4"><a href="<%=recipe_path(recipe.id)%>"><%= recipe.title %></a></h1>
+                <div class="postcard_text_container" style="background-color:white">
+                    <h1 class="postcard__title mt-4"><a href="<%=recipe_path(recipe.id)%>" style="color:black;text-decoration: none;"><%= recipe.title %></a></h1>
                     <div class="postcard__bar"></div>
-                    <div class="postcard__preview-txt mb-3"><%= recipe.description.truncate_words(5) %></div><br><br>
+                    <div class="postcard__preview-txt mb-3" style="color:grey"><%= recipe.description.truncate_words(5) %></div><br><br>
                            <ul class="postcard__tagbox">
                                 <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
@@ -62,3 +62,5 @@ body {
 
                                   <% end %>
     </div></div>
+
+
