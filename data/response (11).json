@@ -1,0 +1,364 @@
+{
+  "vegetarian": true,
+  "vegan": false,
+  "glutenFree": true,
+  "dairyFree": false,
+  "veryHealthy": false,
+  "cheap": false,
+  "veryPopular": false,
+  "sustainable": false,
+  "weightWatcherSmartPoints": 29,
+  "gaps": "no",
+  "lowFodmap": false,
+  "aggregateLikes": 3,
+  "spoonacularScore": 69.0,
+  "healthScore": 22.0,
+  "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+  "license": "CC BY 3.0",
+  "sourceName": "Foodista",
+  "pricePerServing": 145.8,
+  "extendedIngredients": [{
+    "id": 1002006,
+    "aisle": "Spices and Seasonings",
+    "image": "cardamom.jpg",
+    "consistency": "solid",
+    "name": "cardamom pods",
+    "nameClean": "cardamom pods",
+    "original": "3 Cardamom pods",
+    "originalString": "3 Cardamom pods",
+    "originalName": "Cardamom pods",
+    "amount": 3.0,
+    "unit": "",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 3.0,
+        "unitShort": "",
+        "unitLong": ""
+      },
+      "metric": {
+        "amount": 3.0,
+        "unitShort": "",
+        "unitLong": ""
+      }
+    }
+  }, {
+    "id": 12087,
+    "aisle": "Nuts;Savory Snacks",
+    "image": "cashews.jpg",
+    "consistency": "solid",
+    "name": "cashews",
+    "nameClean": "cashews",
+    "original": "Cashews",
+    "originalString": "Cashews",
+    "originalName": "Cashews",
+    "amount": 6.0,
+    "unit": "servings",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 6.0,
+        "unitShort": "servings",
+        "unitLong": "servings"
+      },
+      "metric": {
+        "amount": 6.0,
+        "unitShort": "servings",
+        "unitLong": "servings"
+      }
+    }
+  }, {
+    "id": 9299,
+    "aisle": "Dried Fruits;Produce;Baking",
+    "image": "raisins.jpg",
+    "consistency": "solid",
+    "name": "raisins",
+    "nameClean": "raisins",
+    "original": "raisins",
+    "originalString": "raisins",
+    "originalName": "raisins",
+    "amount": 6.0,
+    "unit": "servings",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 6.0,
+        "unitShort": "servings",
+        "unitLong": "servings"
+      },
+      "metric": {
+        "amount": 6.0,
+        "unitShort": "servings",
+        "unitLong": "servings"
+      }
+    }
+  }, {
+    "id": 20444,
+    "aisle": "Pasta and Rice",
+    "image": "uncooked-white-rice.png",
+    "consistency": "solid",
+    "name": "rice",
+    "nameClean": "rice",
+    "original": "1 cup rice",
+    "originalString": "1 cup rice",
+    "originalName": "rice",
+    "amount": 1.0,
+    "unit": "cup",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 1.0,
+        "unitShort": "cup",
+        "unitLong": "cup"
+      },
+      "metric": {
+        "amount": 236.588,
+        "unitShort": "ml",
+        "unitLong": "milliliters"
+      }
+    }
+  }, {
+    "id": 2037,
+    "aisle": "Ethnic Foods;Spices and Seasonings;Gourmet",
+    "image": "saffron.jpg",
+    "consistency": "solid",
+    "name": "saffron",
+    "nameClean": "saffron",
+    "original": "A generous pinch of Saffron",
+    "originalString": "A generous pinch of Saffron",
+    "originalName": "A generous of Saffron",
+    "amount": 1.0,
+    "unit": "pinch",
+    "meta": ["generous"],
+    "metaInformation": ["generous"],
+    "measures": {
+      "us": {
+        "amount": 1.0,
+        "unitShort": "pinch",
+        "unitLong": "pinch"
+      },
+      "metric": {
+        "amount": 1.0,
+        "unitShort": "pinch",
+        "unitLong": "pinch"
+      }
+    }
+  }, {
+    "id": 2047,
+    "aisle": "Spices and Seasonings",
+    "image": "salt.jpg",
+    "consistency": "solid",
+    "name": "salt",
+    "nameClean": "salt",
+    "original": "A pinch of salt",
+    "originalString": "A pinch of salt",
+    "originalName": "A of salt",
+    "amount": 1.0,
+    "unit": "pinch",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 1.0,
+        "unitShort": "pinch",
+        "unitLong": "pinch"
+      },
+      "metric": {
+        "amount": 1.0,
+        "unitShort": "pinch",
+        "unitLong": "pinch"
+      }
+    }
+  }, {
+    "id": 19335,
+    "aisle": "Baking",
+    "image": "sugar-in-bowl.png",
+    "consistency": "solid",
+    "name": "sugar",
+    "nameClean": "sugar",
+    "original": "1 1/2 cups sugar",
+    "originalString": "1 1/2 cups sugar",
+    "originalName": "sugar",
+    "amount": 1.5,
+    "unit": "cups",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 1.5,
+        "unitShort": "cups",
+        "unitLong": "cups"
+      },
+      "metric": {
+        "amount": 354.882,
+        "unitShort": "ml",
+        "unitLong": "milliliters"
+      }
+    }
+  }, {
+    "id": 2050,
+    "aisle": "Baking",
+    "image": "vanilla-extract.jpg",
+    "consistency": "liquid",
+    "name": "vanilla",
+    "nameClean": "vanilla extract",
+    "original": "1 tsp Vanilla",
+    "originalString": "1 tsp Vanilla",
+    "originalName": "Vanilla",
+    "amount": 1.0,
+    "unit": "tsp",
+    "meta": [],
+    "metaInformation": [],
+    "measures": {
+      "us": {
+        "amount": 1.0,
+        "unitShort": "tsp",
+        "unitLong": "teaspoon"
+      },
+      "metric": {
+        "amount": 1.0,
+        "unitShort": "tsp",
+        "unitLong": "teaspoon"
+      }
+    }
+  }, {
+    "id": 1077,
+    "aisle": "Milk, Eggs, Other Dairy",
+    "image": "milk.png",
+    "consistency": "liquid",
+    "name": "whole milk",
+    "nameClean": "milk",
+    "original": "8 cups of whole milk",
+    "originalString": "8 cups of whole milk",
+    "originalName": "whole milk",
+    "amount": 8.0,
+    "unit": "cups",
+    "meta": ["whole"],
+    "metaInformation": ["whole"],
+    "measures": {
+      "us": {
+        "amount": 8.0,
+        "unitShort": "cups",
+        "unitLong": "cups"
+      },
+      "metric": {
+        "amount": 1.893,
+        "unitShort": "l",
+        "unitLong": "liters"
+      }
+    }
+  }],
+  "id": 663298,
+  "title": "The Lazy Girl's Slow Cooker Rice Pudding",
+  "readyInMinutes": 420,
+  "servings": 6,
+  "sourceUrl": "http://www.foodista.com/recipe/R2L77M5D/the-lazy-girls-slow-cooker-kheer-rice-pudding",
+  "image": "https://spoonacular.com/recipeImages/663298-556x370.jpg",
+  "imageType": "jpg",
+  "summary": "The Lazy Girl's Slow Cooker Rice Pudding is a <b>gluten free and vegetarian</b> dessert. One serving contains <b>764 calories</b>, <b>19g of protein</b>, and <b>24g of fat</b>. This recipe serves 6 and costs $1.46 per serving. 3 people have tried and liked this recipe. Head to the store and pick up an of salt, sugar, raisins, and a few other things to make it today. From preparation to the plate, this recipe takes around <b>7 hours</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 71%</b>. This score is good. Try <a href=\"https://spoonacular.com/recipes/favorite-fall-slow-cooker-lazy-cabbage-rolls-with-brown-rice-herbs-502361\">Favorite fall : Slow-cooker {lazy} cabbage rolls with brown rice & herbs</a>, <a href=\"https://spoonacular.com/recipes/slow-cooker-rice-pudding-163977\">Slow Cooker Rice Pudding</a>, and <a href=\"https://spoonacular.com/recipes/slow-cooker-caramel-rice-pudding-162140\">Slow-Cooker Caramel Rice Pudding</a> for similar recipes.",
+  "cuisines": [],
+  "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+  "diets": ["gluten free", "lacto ovo vegetarian"],
+  "occasions": [],
+  "winePairing": {},
+  "instructions": "<ol><li>Soak the saffron strands in 2 teaspoons of lukewarm milk.</li><li>Mix together the milk, rice and sugar into the slow cooker.</li><li>Cook on high for one hour and then on low for about 6 hours or more.</li><li>Stir in-between to ensure the rice is not sticking to the pan or clumping but do this no more than once or twice as you are not supposed to open a slow cooker too many times during the cooking process.</li><li>The rice may seem whole and piecey but once you stir the mixture, it will break down well.</li><li>About half and hour or even an hour before removing add in the saffron, cardamom and vanilla.</li><li>Mix well.</li><li>Add in the cashews and raisins.</li><li>If its very thick , then thin it out with some milk before serving.</li></ol>",
+  "analyzedInstructions": [{
+    "name": "",
+    "steps": [{
+      "number": 1,
+      "step": "Soak the saffron strands in 2 teaspoons of lukewarm milk.",
+      "ingredients": [{
+        "id": 2037,
+        "name": "saffron",
+        "localizedName": "saffron",
+        "image": "saffron.jpg"
+      }, {
+        "id": 1077,
+        "name": "milk",
+        "localizedName": "milk",
+        "image": "milk.png"
+      }],
+      "equipment": []
+    }, {
+      "number": 2,
+      "step": "Mix together the milk, rice and sugar into the slow cooker.Cook on high for one hour and then on low for about 6 hours or more.Stir in-between to ensure the rice is not sticking to the pan or clumping but do this no more than once or twice as you are not supposed to open a slow cooker too many times during the cooking process.The rice may seem whole and piecey but once you stir the mixture, it will break down well.About half and hour or even an hour before removing add in the saffron, cardamom and vanilla.",
+      "ingredients": [{
+        "id": 2006,
+        "name": "cardamom",
+        "localizedName": "cardamom",
+        "image": "cardamom.jpg"
+      }, {
+        "id": 2037,
+        "name": "saffron",
+        "localizedName": "saffron",
+        "image": "saffron.jpg"
+      }, {
+        "id": 1052050,
+        "name": "vanilla",
+        "localizedName": "vanilla",
+        "image": "vanilla.jpg"
+      }, {
+        "id": 19335,
+        "name": "sugar",
+        "localizedName": "sugar",
+        "image": "sugar-in-bowl.png"
+      }, {
+        "id": 1077,
+        "name": "milk",
+        "localizedName": "milk",
+        "image": "milk.png"
+      }, {
+        "id": 20444,
+        "name": "rice",
+        "localizedName": "rice",
+        "image": "uncooked-white-rice.png"
+      }],
+      "equipment": [{
+        "id": 404718,
+        "name": "slow cooker",
+        "localizedName": "slow cooker",
+        "image": "slow-cooker.jpg"
+      }, {
+        "id": 404645,
+        "name": "frying pan",
+        "localizedName": "frying pan",
+        "image": "pan.png"
+      }],
+      "length": {
+        "number": 420,
+        "unit": "minutes"
+      }
+    }, {
+      "number": 3,
+      "step": "Mix well.",
+      "ingredients": [],
+      "equipment": []
+    }, {
+      "number": 4,
+      "step": "Add in the cashews and raisins.If its very thick , then thin it out with some milk before serving.",
+      "ingredients": [{
+        "id": 12087,
+        "name": "cashews",
+        "localizedName": "cashews",
+        "image": "cashews.jpg"
+      }, {
+        "id": 9299,
+        "name": "raisins",
+        "localizedName": "raisins",
+        "image": "raisins.jpg"
+      }, {
+        "id": 1077,
+        "name": "milk",
+        "localizedName": "milk",
+        "image": "milk.png"
+      }],
+      "equipment": []
+    }]
+  }],
+  "originalId": null,
+  "spoonacularSourceUrl": "https://spoonacular.com/the-lazy-girls-slow-cooker-rice-pudding-663298"
+}
