@@ -1,4 +1,4 @@
-	
+
 <style>
 body {
   background-color: #F4F4F4;
@@ -35,8 +35,8 @@ body {
                                 <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
                                 <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
-                                 
-                                  
+
+
 
 
                                 <% @my_user_id == current_user.id%>
@@ -47,13 +47,13 @@ body {
                                      <%= link_to recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do %>
                                           <li class="tag__item" style="color:black"><i class="far fa-bookmark mr-2" ></i><span style="color:white">save</span></li>
                                      <%end%>
-  
+
                                   <% else %>
-                              
+
                                         <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete do %>
                                     <li class="tag__item"><i class="fas fa-bookmark mr-2"></i><span style="color:white">saved</span></li>
                                  <%end%>
-                               
+
                              <% end %>
 
                          </ul>
