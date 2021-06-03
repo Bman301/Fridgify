@@ -68,13 +68,12 @@ recipe1 = Recipe.create!(
   rating: 2.5,
   difficulty_level: 'Easy'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe1,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe2 = Recipe.create!(
   # comment: ,
@@ -86,13 +85,12 @@ recipe2 = Recipe.create!(
   rating: 4,
   difficulty_level: 'Medium'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe2,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe3 = Recipe.create!(
   # comment: ,
@@ -104,13 +102,12 @@ recipe3 = Recipe.create!(
   rating: 2.5,
   difficulty_level: 'Easy'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe3,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe4 = Recipe.create!(
   # comment: ,
@@ -122,13 +119,12 @@ recipe4 = Recipe.create!(
   rating: 4.9,
   difficulty_level:'Medium'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe4,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe5 = Recipe.create!(
   # comment: ,
@@ -140,13 +136,12 @@ recipe5 = Recipe.create!(
   rating: 4.5,
   difficulty_level: 'Hard'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe5,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe6 = Recipe.create!(
   # comment: ,
@@ -158,13 +153,12 @@ recipe6 = Recipe.create!(
   rating: 3.8,
   difficulty_level: 'Medium'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe6,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe7 = Recipe.create!(
   # comment: ,
@@ -176,13 +170,12 @@ recipe7 = Recipe.create!(
   rating: 2.8,
   difficulty_level: 'Hard'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe7,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe8 = Recipe.create!(
   # comment: ,
@@ -194,13 +187,12 @@ recipe8 = Recipe.create!(
   rating: 3.5,
   difficulty_level: 'Medium'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe8,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
 
 recipe9 = Recipe.create!(
   # comment: ,
@@ -212,10 +204,9 @@ recipe9 = Recipe.create!(
   rating: 5,
   difficulty_level: '45 min'
 )
-all_ingredients.each do |ingredient| 
+
   RecipeIngredient.create!(
     amount: "1",
     recipe: recipe9,
-    ingredient: Ingredient.where(name: ingredient).first
+    ingredient: Ingredient.all.sample
   )
-end
