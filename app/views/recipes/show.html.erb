@@ -58,7 +58,7 @@
 
     <div class="recipe-steps">
     <h2>Lets do it!</h2>
-      <p> <%= @recipe.description %> </p>
+      <p> <%= @recipe.description.html_safe %> </p>
     </div>
 
 </div>
