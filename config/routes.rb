@@ -9,7 +9,4 @@ Rails.application.routes.draw do
 
   resources :cookbooks, only: [:index, :destroy]
 
-
-
-
 end

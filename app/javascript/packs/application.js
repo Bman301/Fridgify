@@ -24,13 +24,9 @@ require("channels");
 import "bootstrap";
 
 import { record } from "./voice";
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// import { inputFunct } from "./enterInput";
 
 document.addEventListener("turbolinks:load", () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   record();
 });
 
@@ -38,3 +34,4 @@ document.addEventListener("turbolinks:load", () => {
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
