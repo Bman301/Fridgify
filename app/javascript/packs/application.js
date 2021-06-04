@@ -30,6 +30,8 @@ document.addEventListener("turbolinks:load", () => {
   record();
 });
 
-// document.addEventListener("turbolinks:load", () => {
-//   inputFunct();
-// });
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
+
