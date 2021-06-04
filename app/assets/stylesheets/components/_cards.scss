@@ -307,11 +307,11 @@
         
         //SHOW PAGE CARDS//
         .recipe-wrapper {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 25px;
+            justify-content: center;
+            margin: 30px;
+            padding: 40px;
             border-radius: 10px;
-            width: 95%;
+            width: 90%;
             background-color: #ffffff;
             box-shadow: 5px 5px #bda06a
         }
@@ -320,6 +320,10 @@
             display: flex;
             justify-items: left;
             justify-content: space-between;
+            width: 100%;
+        }
+        
+        .stars-reviews {
             width: 100%;
         }
         
@@ -343,6 +347,7 @@
         }
         
         .r-ingredients ul {
+            flex: row;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -356,8 +361,8 @@
             border-radius: 5px;
         }
         
-        .specs-recipe r-time {
-            border: 5px gray
+        .r-spec {
+            width: 100%;
         }
         
         .recipe-steps {

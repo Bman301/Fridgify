@@ -1,66 +1,79 @@
-<div class="recipe-wrapper">
 
-<div class="title-bookmark">
-  <div class="r-title">
-    <h1> <%= @recipe.title %> </h1>
-  </div>
-  <div>
-<i class="far fa-bookmark" style="font-size: 35px"></i>
-</div>
+  <div class="recipe-wrapper">
 
-<div class="r-ratings">
-  <a href="#" class="add-rating-reviews-link ugc-ratings-link review-stars-container">
-    <span class="rating-star active" aria-hidden="true" data-rating="1"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" tabindex="-1" ><title>1 – Couldn't eat it</title><path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></span>
-    <span class="rating-star active" aria-hidden="true" data-rating="2"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" tabindex="-1" ><title>2 – Didn't like it</title><path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></span>
-    <span class="rating-star active" aria-hidden="true" data-rating="3"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" tabindex="-1" ><title>3 – It was OK</title><path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></span>
-    <span class="rating-star active" aria-hidden="true" data-rating="4"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" tabindex="-1" ><title>4 – Liked it</title><path class="rating-star-filled" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></span>
-    <span class="rating-star" aria-hidden="true" data-rating="5"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" tabindex="-1"><title>5 – Loved it</title><g fill="#000" fill-opacity=".95"><path class="rating-star-filled" d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"></path></g></svg></span>
-  </a>
-  </div>                  
-
-</div>
-<div class="d-flex info-card">
-  <div class="left-container">
-    <div class="r-img">
-    <img src="<%= @recipe.image %>" alt="image" class="w-100 img-fluid">
-    </div>
-  </div>
-
-  <div class="right-container">
-    <div class="r-ingredients"style="text-align: center; list-style:none">
-    <h2>Ingredients</h2>
-    <ul>
-      <p> <% @recipe.recipe_ingredients.each do |ingredient| %> 
-        <li> <%=  Ingredient.find(ingredient.amount) %></li>
-        <li> <%=  Ingredient.find(ingredient.id).name %></li>
-      <% end %>
-    </ul>
-      </p>
-    </div>
-
-    <div class="specs-recipe">
-      <div class="r-time"><i class="far fa-clock"></i>
-        <p> <%= @recipe.prep_time %> </p>
+    <div class="title-bookmark">
+      <div class="r-title">
+        <h1> <%= @recipe.title %> </h1>
       </div>
-
-      <div class="r-diff"><i class="fas fa-tachometer-alt"></i>
-        <p> <%= @recipe.difficulty_level %> </p>
+      <div>
+       <% if @recipe.cookbooks.where(user: current_user).empty?  %>
+         <%= link_to recipe_cookbooks_path(@recipe.id, user_id: current_user), method: :post do %>
+          <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2" ></i></li>
+          <%end%>
+        <% else %>
+        <%= link_to cookbook_path(@recipe.cookbooks.where(user: current_user).first), method: :delete do %>
+          <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>
+        <%end%>
+         <% end %>
+       
       </div>
-
-      <div class="r-serving">
-        <p> <%= @recipe.serving_size %> </p>
-      </div>
-
     </div>
+
+    <div class="stars-reviews">
+      <i class="far fa-star" style="font-size: 20px"></i>
+      <i class="far fa-star" style="font-size: 20px"></i>
+      <i class="far fa-star" style="font-size: 20px"></i>
+      <i class="far fa-star" style="font-size: 20px"></i>
+      <i class="far fa-star" style="font-size: 20px"></i>
+    </div>          
+
+    <div class="d-flex info-card">
+      <div class="left-container">
+        <div class="r-img">
+          <img src="<%= @recipe.image %>" alt="image" class="w-100 img-fluid">
+        </div>
+      </div>    
+      <div class="right-container">
+        <h2 style="text-align: center">Ingredients</h2>
+        <div class="r-ingredients"style="text-align: left; list-style:none">
+          
+            <ul>
+              <p>
+                <% @recipe.recipe_ingredients.each do |recipe_ingredient| %> 
+                  <li><%=  recipe_ingredient.amount %> = <%=  recipe_ingredient.ingredient.name  %></li>
+                <% end %>
+              </p>
+            </ul>
+        </div>
+
+        <div class="specs-recipe">
+          <div class="r-spec ">
+            <i class="far fa-clock" style="font-size: 30px"></i>
+            <p> 
+              <%= @recipe.prep_time %> 
+            </p>
+          </div>
+
+          <div class="r-spec">
+            <i class="fas fa-tachometer-alt" style="font-size: 30px"></i>
+            <p> 
+              <%= @recipe.difficulty_level %>
+            </p>
+          </div>
+
+          <div class="r-spec">
+            <i class="fas fa-user" style="font-size: 30px"></i>
+            <p> 
+              <%= @recipe.serving_size %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="recipe-steps">
+          <h2>Lets do it!</h2>
+          <p> <%= @recipe.description.html_safe %> </p>
+        </div>
   </div>
-
-</div>
-
-    <div class="recipe-steps">
-    <h2>Lets do it!</h2>
-      <p> <%= @recipe.description.html_safe %> </p>
-    </div>
-
-</div>
-</div>
 
