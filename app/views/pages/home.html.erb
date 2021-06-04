@@ -1,21 +1,21 @@
- 
+
   <div class="container-fluid px-0" style="height: 615px">
     <div class="home-video-wrapper">
       <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
-      <div class="info-welcome ml-5">
+      <div class="info-welcome ml-5 w-50">
         <h1 class="display-1" style="font-family: 'Montserrat';color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
         <p class="question" style="font-family: 'Montserrat';color: white;margin-top: 25px;margin-left: 40px;">Tell me what's in your fridge, and I'll tell you what to cook!</p>
-          <div class="searchbar d-flex justify-content-end">
-            <div class="mic mr-4" id="voice-recognition"><i style="color:white" class="fas fa-microphone btn btn btn-dark mx-3 w-100 p-2 h-100"></i></div>
+          <div class="searchbar d-flex justify-content-end bg-white p-2 w-75 ml-5" style="border-radius:10px!important";>
+            <div class="mic" id="voice-recognition"><i id="microphone" style="color:white" class="fas fa-microphone btn btn btn-dark w-100 h-100"></i></div>
             <div class="w-100">
               <%= form_tag recipes_path, method: :get do %>
-               <%= text_field_tag :query, '', class: "form-control border-dark rounded-pill w-100", id:"SpeechToText",
-               placeholder: "...What's in your fridge?"
+               <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0", id:"SpeechToText",
+               placeholder: "       ...What's in your fridge?"
               %>
             </div>
 
             <div class="rounded">
-              <%= submit_tag "Search", class: "btn btn btn-dark mx-3" %>
+              <%= submit_tag "Search", class: "btn btn btn-dark", id: "formButton" %>
               <% end %>
             </div>
           </div>
@@ -66,4 +66,4 @@
             </div>
         </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class="fas fa-arrow-left pl-5"></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right pr-5'></i> </a>
     </div>
-</div>}
+</div>
