@@ -33,3 +33,8 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   record();
 });
+
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

@@ -1,5 +1,5 @@
 
-  <div class="recipe-wrapper">
+  <div class="recipe-wrapper mx-auto">
 
     <div class="title-bookmark">
       <div class="r-title">
@@ -19,13 +19,26 @@
       </div>
     </div>
 
-    <div class="stars-reviews">
-      <i class="far fa-star" style="font-size: 20px"></i>
-      <i class="far fa-star" style="font-size: 20px"></i>
-      <i class="far fa-star" style="font-size: 20px"></i>
-      <i class="far fa-star" style="font-size: 20px"></i>
-      <i class="far fa-star" style="font-size: 20px"></i>
-    </div>          
+    <% if !current_user.nil? %>
+
+                          <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
+
+                      <div class="stars-reviews">
+                            <%= simple_form_for [@recipe, @rating] do |f| %>
+                          <%= f.input :rating, collection: (1..5).to_a %>
+                          <%= f.submit "Send your rating" %>
+                          
+                        <% end %>
+                      </div>          
+
+                  <% else %>
+                  <p>You already rated this recipe</p>
+                  <% end %>
+
+    <% else %>
+
+    <p>Login or signup to rate this recipe</p>
+ <% end %>
 
     <div class="d-flex info-card">
       <div class="left-container">
