@@ -29,9 +29,3 @@ import { record } from "./voice";
 document.addEventListener("turbolinks:load", () => {
   record();
 });
-
-
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
-

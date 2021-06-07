@@ -32,6 +32,10 @@ class RecipesController < ApplicationController
     @cookbook = Cookbook.new
   end
 
+  def api_call
+    raise
+  end
+
   private
 #  we need to check the image field later
   def recipe_params
