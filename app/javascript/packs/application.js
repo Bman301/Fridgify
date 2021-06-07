@@ -26,6 +26,19 @@ import "bootstrap";
 import { record } from "./voice";
 // import { inputFunct } from "./enterInput";
 
+<<<<<<< HEAD
 document.addEventListener("turbolinks:load", () => {
   record();
+=======
+import { initStarRating } from '../plugins/init_star_rating';
+
+document.addEventListener("turbolinks:load", () => {
+
+
+  if (typeof document.getElementById("voice-recognition") !== 'undefined') { 
+    record();  } ;
+
+  
+  initStarRating();
+>>>>>>> 2a9fa925103244e159d7e5941fd186e8d28fa5aa
 });
