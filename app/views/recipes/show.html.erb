@@ -24,15 +24,15 @@
                           <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
 
                       <div class="stars-reviews">
-                            <%= simple_form_for [@recipe, @rating] do |f| %>
+                            <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
                           <%= f.input :rating, collection: (1..5).to_a %>
-                          <%= f.submit "Send your rating" %>
+                   
                           
                         <% end %>
                       </div>          
 
                   <% else %>
-                  <p>You already rated this recipe</p>
+                  <p>Thanks for rating this recipe!</p>
                   <% end %>
 
     <% else %>
