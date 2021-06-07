@@ -31,13 +31,16 @@ end
 #   ]
 # }
 
-file  = File.read('./data/response.json')
-recipe_hash = JSON.parse(file)
-all_recipe_arr = recipe_hash['recipes']
 
-all_recipe_arr.each do |recipe|
-  
-  puts 'creating new recipes'
+Dir.each_child("./data") do |file|
+
+  json = File.open("./data/#{file}").read
+  recipe_hash = JSON.parse(json)
+  all_recipe_arr = recipe_hash['recipes']
+
+  all_recipe_arr.each do |recipe|
+    
+    puts 'creating new recipes'
 
     recipes = Recipe.create!(
       image: recipe["image"],
@@ -46,7 +49,8 @@ all_recipe_arr.each do |recipe|
       description: recipe["summary"],
       serving_size: recipe["servings"].to_s,
       rating: recipe["spoonacularScore"].to_i,
-      difficulty_level: recipe["readyInMinutes"].to_s
+      difficulty_level: recipe["readyInMinutes"].to_s,
+      steps: recipe["instructions"]
     )
 
     puts 'creating new ingredients'
@@ -62,7 +66,7 @@ all_recipe_arr.each do |recipe|
         ingredient: ingredients
       )
     end
+  end
 end
-
 puts 'done'
 
