@@ -39,7 +39,7 @@ Dir.each_child("./data") do |file|
   all_recipe_arr = recipe_hash['recipes']
 
   all_recipe_arr.each do |recipe|
-    
+
     puts 'creating new recipes'
     recipes = Recipe.find_by(title: recipe["title"])
     unless recipes
@@ -74,4 +74,3 @@ Dir.each_child("./data") do |file|
   end
 end
 puts 'done'
-

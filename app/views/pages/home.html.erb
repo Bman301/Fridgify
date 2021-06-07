@@ -11,13 +11,13 @@
             <div class="mic" id="voice-recognition"><i id="microphone" style="color:white" class="fas fa-microphone btn btn btn-dark w-100 h-100"></i></div>
             <div class="w-100">
               <%= form_tag recipes_path, method: :get do %>
-               <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0", id:"SpeechToText",
+               <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0",  id:"SpeechToText",
                placeholder: "       ...What's in your fridge?"
               %>
             </div>
 
             <div class="rounded">
-              <%= submit_tag "Search",  class: "btn btn btn-dark", id: "formButton" %>
+              <%= submit_tag "Search",  class: "btn btn btn-dark",  id: "formButton" %>
               <% end %>
             </div>
           </div>
@@ -69,3 +69,6 @@
         </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class="fas fa-arrow-left pl-5"></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right pr-5'></i> </a>
     </div>
 </div>
+<script>
+
+</script>

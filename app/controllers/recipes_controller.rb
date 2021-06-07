@@ -1,3 +1,5 @@
+require 'json'
+require 'open-uri'
 class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
@@ -33,11 +35,24 @@ class RecipesController < ApplicationController
   end
 
   def api_call
-    raise
+    api_key = "d0b142a570734c37a523f144e830fcae"
+    @recipes = [];
+
+    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{params[:query]}&number=5&apiKey=#{api_key}"
+    five_recipes = URI.open(url).read
+    @recipes_ingredients = JSON.parse(five_recipes)
+
+    @recipes_ingredients.each do |recipe|
+      url = "https://api.spoonacular.com/recipes/#{recipe["id"]}/information?includeNutrition=false&apiKey=#{api_key}"
+      one_recipe = URI.open(url).read
+      parsed_recipe = JSON.parse(one_recipe)
+
+      @recipes.push(parsed_recipe)
+    end
   end
 
   private
-#  we need to check the image field later
+
   def recipe_params
      params.require(:recipe).permit(:comment, :image, :title, :prep_time, :description, :serving_size, :rating, :difficulty_level)
   end

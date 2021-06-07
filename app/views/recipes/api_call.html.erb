@@ -1,36 +1,10 @@
-
-<style>
-body {
-  background-color: #F4F4F4;
-}
-</style>
-
-<div class="container-fluid mb-5">
-<div class="row">
-<div class="col-2"></div>
-<div class="col-9 d-flex justify-content-between bg-white p-0 " style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
-<div class="mic m-3 p-3" id="voice-recognition"><i style="color:black;font-size:30px" class="fas fa-microphone btn mx-3 w-100 h-100"></i></div>
-    <div class="searchbar m-3 d-flex align-items-center" >
-    <span style="width:100%; font-size:30px">   <%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", id:"SpeechToText", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
-    </div>
-    <div class="rounded p-3 m-3">
-        <%= submit_tag "Search", class: "btn btn-info" %>
-        <% end %>
-      </div></div></div>
-
-      <div class="container mt-5 w-25 rounded">
-      <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
-      </div>
-
-
-    <div class="row mt-5">
+ <div class="row mt-5">
 
       <% @recipes.each do |recipe| %>
 
          <div class="col-sm-12 col-md-6">
             <article class="postcard postcard-styling">
-                <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
+                <a class="postcard__img_link" href="<%=recipe_path(recipe["id"])%>">
                     <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
                 </a>
                 <div class="postcard_text_container" style="background-color:white">
@@ -67,4 +41,4 @@ body {
         </div>
 
                                   <% end %>
-</div></div>
+</div>
