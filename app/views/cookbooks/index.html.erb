@@ -6,45 +6,41 @@ body {
 }
 </style>
 <div class="container-fluid mb-5">
-<h1> My Recipes </h1>
- <% if @cookbooks.count == 0 %>
-     <br> <h3 class="text-center">You have not added any recipe in your favorites yet!<br><br>
-     Click on <i class="far fa-bookmark mr-2"></i> to add one</h3>
+    <div class="row">
+        <h1> My Recipes </h1>
+            <% if @cookbooks.count == 0 %>
+                <br> <h3 class="text-center">You have not added any recipe in your favorites yet!<br><br>
+                Click on <i class="far fa-bookmark mr-2"></i> to add one</h3>
+            <% end %>
+    </div>
+    <div class="row mt-5">
+        <% @cookbooks.each do |cookbook| %>
+                <div class="col-sm-12 col-md-6">
+                        <article class="postcard postcard-styling">
+                            <%= link_to recipe_path(cookbook.recipe_id), class: "postcard__img_link" do %>
+                                    <img class="postcard__img pr-4" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
+                            <% end %>
 
-      <% end %>
- <div class="row mt-5">
+                            <div class="postcard_text_container" style="background-color:white">
+                                <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
+                                <div class="postcard__bar"></div>
+                                <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(5) %>
+                                <div class="postcard__preview-txt mb-3" style="color:grey"><%=@descrip.html_safe %></div
+                                ><br><br>
+                                <ul class="postcard__tagbox mb-3">
+                                            <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
+                                            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= (Recipe.find(cookbook.recipe_id).rating)/20 %> / 5</li>
+                                            <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= Recipe.find(cookbook.recipe_id).difficulty_level %></li>
+                                                    <%= link_to cookbook_path(cookbook.id), method: :delete do %>
+                                                   <li class="tag__item"><i class="fas fa-bookmark mr-2"></i><span style="color:white">delete</span></li>
+                                                    <%end%>
 
- 
-     
-
-
-<% @cookbooks.each do |cookbook| %>
-        <div class="col-sm-12 col-md-6">
-                <article class="postcard postcard-styling">
-                    <%= link_to recipe_path(cookbook.recipe_id), class: "postcard__img_link" do %>
-                            <img class="postcard__img pr-4" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
-                    <% end %>
-
-
-                    <div class="postcard_text_container" style="background-color:white">
-                        <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
-                        <div class="postcard__bar"></div>
-                        <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(5) %>
-                        <div class="postcard__preview-txt mb-3" style="color:grey"><%=@descrip.html_safe %></div><br><br>
-                            <ul class="postcard__tagbox mb-3">
-                                    <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
-                                    <li class="tag__item"><i class="fas fa-star mr-2"></i><%= (Recipe.find(cookbook.recipe_id).rating)/20 %> / 5</li>
-                                    <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= Recipe.find(cookbook.recipe_id).difficulty_level %></li>
-                                            <%= link_to cookbook_path(cookbook.id), method: :delete do %>
-                                        <li class="tag__item"><i class="fas fa-bookmark mr-2"></i><span style="color:white">delete</span></li>
-                                    <%end%>
-
-                            </ul>
-                    </div>
-                </article>
-            </div>
-<% end %>
-
-</div></div>
+                                </ul>
+                            </div>
+                        </article>
+                </div>
+        <% end %>
+    </div>
+</div>
 
 
