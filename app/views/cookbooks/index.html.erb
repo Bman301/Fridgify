@@ -19,7 +19,8 @@ body {
                     <div class="postcard_text_container" style="background-color:white">
                         <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
                         <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt mb-3" style="color:grey"><%= Recipe.find(cookbook.recipe_id).description.truncate_words(5).html_safe %></div><br><br>
+                        <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(5) %>
+                        <div class="postcard__preview-txt mb-3" style="color:grey"><%=@descrip.html_safe %></div><br><br>
                             <ul class="postcard__tagbox">
                                     <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
                                     <li class="tag__item"><i class="fas fa-star mr-2"></i><%= Recipe.find(cookbook.recipe_id).rating %> / 5</li>
