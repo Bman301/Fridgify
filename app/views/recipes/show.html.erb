@@ -1,5 +1,5 @@
 
-  <div class="recipe-wrapper mx-auto">
+  <div class="recipe-wrapper mx-auto" style="max-width: 900px" >
 
     <div class="title-bookmark">
       <div class="r-title">
@@ -23,11 +23,9 @@
 
                           <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
 
-                      <div class="stars-reviews">
-                            <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
-                          <%= f.input :rating, collection: (1..5).to_a %>
-                   
-                          
+                      <div class="stars-reviews ">
+                    My rating:&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
+                          <%= f.input :rating, collection: (1..5).to_a, label: false %>
                         <% end %>
                       </div>          
 
@@ -39,6 +37,18 @@
 
     <p>Login or signup to rate this recipe</p>
  <% end %>
+
+ <div class=" d-inline-flex align-items-bottom">
+ <div id="thisrating" data-rating="<%= @recipe.rating %>"></div>
+<br><div class="align-items-center"><p>Global rating:
+<select id="diplay-rating">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+ </select></p>
+ </div></div>
 
     <div class="d-flex info-card">
       <div class="left-container">
