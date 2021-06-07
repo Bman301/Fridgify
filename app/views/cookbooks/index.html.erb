@@ -7,7 +7,15 @@ body {
 </style>
 <div class="container-fluid mb-5">
 <h1> My Recipes </h1>
+ <% if @cookbooks.count == 0 %>
+     <br> <h3 class="text-center">You have not added any recipe in your favorites yet!<br><br>
+     Click on <i class="far fa-bookmark mr-2"></i> to add one</h3>
+
+      <% end %>
  <div class="row mt-5">
+
+ 
+     
 
 
 <% @cookbooks.each do |cookbook| %>
