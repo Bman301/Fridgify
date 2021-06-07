@@ -24,7 +24,6 @@ require("channels");
 import "bootstrap";
 
 import { record } from "./voice";
-// import { inputFunct } from "./enterInput";
 
 import { initStarRating } from '../plugins/init_star_rating';
 import { displayRating } from '../plugins/init_star_rating';

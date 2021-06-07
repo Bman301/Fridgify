@@ -18,9 +18,13 @@ body {
         <%= submit_tag "Search", class: "btn btn-info" %>
         <% end %>
       </div></div></div>
+
+      <div class="container mt-5 w-25 rounded">
+      <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
+      </div>
+
+
     <div class="row mt-5">
-
-
 
       <% @recipes.each do |recipe| %>
 
@@ -60,4 +64,4 @@ body {
         </div>
 
                                   <% end %>
-    </div></div>
+</div></div>
