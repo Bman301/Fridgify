@@ -9,7 +9,22 @@ const initStarRating = () => {
       }
     });
   };
-export { initStarRating };
 
+
+
+  const displayRating = () => {
+    const score = document.getElementById("thisrating").dataset.rating;
+    var number = parseFloat(score);
+    var number = number / 20;
+    $('#diplay-rating').barrating({
+      theme: 'css-stars',
+      initialRating: number,
+      readonly: 'true'
+    });
+  };
+
+
+export { initStarRating };
+export {displayRating };
 
 

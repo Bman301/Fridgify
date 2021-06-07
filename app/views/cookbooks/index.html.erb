@@ -31,7 +31,7 @@ body {
                         <div class="postcard__bar"></div>
                         <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(5) %>
                         <div class="postcard__preview-txt mb-3" style="color:grey"><%=@descrip.html_safe %></div><br><br>
-                            <ul class="postcard__tagbox">
+                            <ul class="postcard__tagbox mb-3">
                                     <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
                                     <li class="tag__item"><i class="fas fa-star mr-2"></i><%= Recipe.find(cookbook.recipe_id).rating %> / 5</li>
                                     <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= Recipe.find(cookbook.recipe_id).difficulty_level %></li>
