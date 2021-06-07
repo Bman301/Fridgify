@@ -10,9 +10,11 @@ export const record = () => {
       event.results[0][0].transcript;
   };
 
-  const voice = document.getElementById("voice-recognition");
 
-  let mic = document.getElementById("microphone");
+    const voice = document.getElementById("voice-recognition");
+    
+    let mic = document.getElementById("microphone");
+ 
 
   let nIntervId;
 
@@ -32,16 +34,19 @@ export const record = () => {
     clearInterval(nIntervId);
   }
 
-  voice.addEventListener("click", (e) => {
-    if (on) {
-      recognition.stop();
-      stopTextColor();
-      mic.style.color = "white";
-      on = false;
-    } else {
-      recognition.start();
-      changeColor();
-      on = true;
-    }
-  });
-};
+
+    if (!!document.getElementById("voice-recognition")){
+    voice.addEventListener("click", (e) => {
+      if (on) {
+        recognition.stop();
+        stopTextColor();
+        mic.style.color = "white";
+        on = false;
+      } else {
+        recognition.start();
+        changeColor();
+        on = true;
+      }
+    });
+  };
+  }

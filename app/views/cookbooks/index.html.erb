@@ -13,9 +13,11 @@ body {
 <% @cookbooks.each do |cookbook| %>
         <div class="col-sm-12 col-md-6">
                 <article class="postcard postcard-styling">
-                    <a class="postcard__img_link" href="<%=recipe_path(cookbook.recipe_id)%>">
-                        <img class="postcard__img pr-4" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
-                    </a>
+                    <%= link_to recipe_path(cookbook.recipe_id), class: "postcard__img_link" do %>
+                            <img class="postcard__img pr-4" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
+                    <% end %>
+
+
                     <div class="postcard_text_container" style="background-color:white">
                         <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
                         <div class="postcard__bar"></div>

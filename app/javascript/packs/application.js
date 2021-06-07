@@ -26,12 +26,14 @@ import "bootstrap";
 import { record } from "./voice";
 // import { inputFunct } from "./enterInput";
 
-document.addEventListener("turbolinks:load", () => {
-  record();
-});
-
-
 import { initStarRating } from '../plugins/init_star_rating';
 
-initStarRating();
+document.addEventListener("turbolinks:load", () => {
 
+
+  if (typeof document.getElementById("voice-recognition") !== 'undefined') { 
+    record();  } ;
+
+  
+  initStarRating();
+});
