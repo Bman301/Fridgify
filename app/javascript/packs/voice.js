@@ -47,6 +47,4 @@ export const record = () => {
         changeColor();
         on = true;
       }
-    });
-  };
-  }
+    })}};

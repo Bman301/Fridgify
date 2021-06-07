@@ -25,8 +25,12 @@ import "bootstrap";
 
 import { record } from "./voice";
 
+import { initStarRating } from '../plugins/init_star_rating';
+import { displayRating } from '../plugins/init_star_rating';
+
 document.addEventListener("turbolinks:load", () => {
-  if (typeof document.getElementById("voice-recognition") !== "undefined") {
-    record();
-  }
+  if (typeof document.getElementById("voice-recognition") !== 'undefined') { 
+    record();  } ;
+  initStarRating();
+  displayRating();
 });

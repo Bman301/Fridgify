@@ -42,7 +42,6 @@ body {
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
                                 <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
 
-
                    <% if !current_user.nil? %>
 
                                  <% if recipe.cookbooks.where(user: current_user).empty?  %>
@@ -58,8 +57,6 @@ body {
                   <a href="#" data-toggle="modal" data-target="#modalUp">  <li class="tag__item" style="color:black"><i class="fas fa-user-plus mr-2" ></i><span style="color:white">sign up</span></li> </a>
 
                   <%end%>
-
-
 
                          </ul>
                 </div>

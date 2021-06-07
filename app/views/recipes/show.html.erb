@@ -1,20 +1,22 @@
 
-  <div class="recipe-wrapper mx-auto">
+  <div class="recipe-wrapper mx-auto" style="max-width: 900px" >
 
     <div class="title-bookmark">
       <div class="r-title">
         <h1> <%= @recipe.title %> </h1>
       </div>
       <div>
-       <% if @recipe.cookbooks.where(user: current_user).empty?  %>
-         <%= link_to recipe_cookbooks_path(@recipe.id, user_id: current_user), method: :post do %>
-          <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2" ></i></li>
-          <%end%>
-        <% else %>
-        <%= link_to cookbook_path(@recipe.cookbooks.where(user: current_user).first), method: :delete do %>
-          <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>
-        <%end%>
-         <% end %>
+      <% if !current_user.nil? %>
+          <% if @recipe.cookbooks.where(user: current_user).empty?  %>
+            <%= link_to recipe_cookbooks_path(@recipe.id, user_id: current_user), method: :post do %>
+              <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2" ></i></li>
+              <%end%>
+            <% else %>
+            <%= link_to cookbook_path(@recipe.cookbooks.where(user: current_user).first), method: :delete do %>
+              <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>
+            <%end%>
+            <% end %>
+            <% end %>
        
       </div>
     </div>
@@ -23,11 +25,9 @@
 
                           <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
 
-                      <div class="stars-reviews">
-                            <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
-                          <%= f.input :rating, collection: (1..5).to_a %>
-                   
-                          
+                      <div class="stars-reviews ">
+                    My rating:&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
+                          <%= f.input :rating, collection: (1..5).to_a, label: false %>
                         <% end %>
                       </div>          
 
@@ -35,10 +35,22 @@
                   <p>Thanks for rating this recipe!</p>
                   <% end %>
 
-    <% else %>
+                    <% else %>
 
-    <p>Login or signup to rate this recipe</p>
- <% end %>
+                    <p>Login or signup to rate this recipe</p>
+    <% end %>
+
+        <div class=" d-inline-flex align-items-bottom">
+        <div id="thisrating" data-rating="<%= @recipe.rating %>"></div>
+        <br><div class="align-items-center"><p>Global rating:
+        <select id="diplay-rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select></p>
+ </div></div>
 
     <div class="d-flex info-card">
       <div class="left-container">
@@ -53,6 +65,7 @@
             <ul>
               <p>
                 <% @recipe.recipe_ingredients.each do |recipe_ingredient| %> 
+                
                   <li> <strong> <%=  recipe_ingredient.ingredient.name.capitalize %> :</strong> &nbsp  <%= recipe_ingredient.amount %></li>
                 <% end %>
               </p>
