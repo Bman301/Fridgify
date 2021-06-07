@@ -36,14 +36,14 @@ Dir.each_child("./data") do |file|
 
   json = File.open("./data/#{file}").read
   recipe_hash = JSON.parse(json)
-  all_recipe_arr = recipe_hash['recipes']
+  all_recipes = recipe_hash['recipes']
 
-  all_recipe_arr.each do |recipe|
+  all_recipes.each do |recipe|
     
     puts 'creating new recipes'
-    recipes = Recipe.find_by(title: recipe["title"])
-    unless recipes
-      recipes = Recipe.create!(
+    existing_recipe = Recipe.find_by(title: recipe["title"])
+    unless existing_recipe
+      existing_recipe = Recipe.create!(
         image: recipe["image"],
         title: recipe["title"],
         prep_time: recipe["readyInMinutes"].to_s,
@@ -57,19 +57,23 @@ Dir.each_child("./data") do |file|
 
     puts 'creating new ingredients'
 
+
     recipe["extendedIngredients"].each do |ingredient|
-      ingredients = Ingredient.find_by(name: ingredient["name"])
-      unless ingredients
-        ingredients = Ingredient.create!(
+      existing_ingredient = Ingredient.find_by(name: ingredient["name"])
+      unless existing_ingredient
+        existing_ingredient = Ingredient.create!(
           name: ingredient["name"],
           api_response: ingredient["id"]
         )
       end
-      RecipeIngredient.create!(
-        amount: ingredient['original'],
-        recipe: recipes,
-        ingredient: ingredients
-      )
+      recipe_ingredient = RecipeIngredient.find_by(recipe: existing_recipe, ingredient: existing_ingredient)
+      unless recipe_ingredient
+        RecipeIngredient.create!(
+          amount: ingredient['original'],
+          recipe: existing_recipe,
+          ingredient: existing_ingredient
+        )
+      end
     end
   end
 end
