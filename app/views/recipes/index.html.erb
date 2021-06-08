@@ -19,11 +19,17 @@ body {
                         <% end %>
                       </div></div></div>
 
-      <div class="container mt-5 w-25 rounded">
+      <div class="row mx-auto text-center d-flex justify-content-center mt-5 mb-4">
       <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
       </div>
 
-</div>
+   <% if @recipes.count == 0 %>
+            <div class="row mx-auto text-center d-flex justify-content-center">
+                <br><br> <h3 class="text-center"><i class="fas fa-exclamation"></i><br><br>No result yet<br><br>
+                Try the <a href="<%= recipes_api_call_path(query: params[:query])%>">advanced search</a> feature or enter other ingredients</h3>
+                </div>
+            <% end %>
+
 
     <div class="row mt-5">
 
