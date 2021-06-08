@@ -57,7 +57,11 @@
     <div class="d-flex info-card">
       <div class="left-container">
         <div class="r-img">
-          <img src="<%= @recipe.image %>" alt="image" class="width:1280; img-fluid">
+          <% if @recipe.image.nil? %>
+          <img src="<%= asset_path('food-404') %>" alt="image" class="w-100 img-fluid">
+          <% else %>
+          <img src="<%= @recipe.image %>" alt="image" class="w-100 img-fluid">
+          <% end %>
         </div>
       </div>    
       <div class="right-container width: 1280">

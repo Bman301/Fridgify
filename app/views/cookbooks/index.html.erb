@@ -6,13 +6,16 @@ body {
 }
 </style>
 <div class="container-fluid mb-5">
-    <div class="row">
-        <h1> My Recipes </h1>
+    <div class="row ml-4">
+        <h1> My Recipes </h1><br>
+        </div>
             <% if @cookbooks.count == 0 %>
-                <br> <h3 class="text-center">You have not added any recipe in your favorites yet!<br><br>
+            <div class="row mx-auto text-center d-flex justify-content-center">
+                <br><br> <h3 class="text-center">You have not added any recipe in your favorites yet!<br><br>
                 Click on <i class="far fa-bookmark mr-2"></i> to add one</h3>
+                </div>
             <% end %>
-    </div>
+ 
     <div class="row mt-5">
         <% @cookbooks.each do |cookbook| %>
                 <div class="col-sm-12 col-md-6">
@@ -24,8 +27,8 @@ body {
                             <div class="postcard_text_container" style="background-color:white">
                                 <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
                                 <div class="postcard__bar"></div>
-                                <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(5) %>
-                                <div class="postcard__preview-txt mb-3" style="color:grey"><%=@descrip.html_safe %></div
+                                <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(25) %>
+                                <div class="postcard__preview-txt mb-3" style="color:grey"><%= strip_tags(@descrip) %></div
                                 ><br><br>
                                 <ul class="postcard__tagbox mb-3">
                                             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
