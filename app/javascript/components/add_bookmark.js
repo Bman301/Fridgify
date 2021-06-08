@@ -37,12 +37,9 @@ const addBookmark = () => {
                         
                                     buttonId.innerHTML = '<li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>';
 
-
-
                                 }
                                         
                             }  );
-                            
                             
             });
 
@@ -50,7 +47,5 @@ const addBookmark = () => {
         
     }
 }
-
-
 
 export { addBookmark }
