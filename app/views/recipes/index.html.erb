@@ -56,11 +56,18 @@ body {
                    <% if !current_user.nil? %>
 
                                  <% if recipe.cookbooks.where(user: current_user).empty?  %>
-                                       <%= link_to recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do %>
-                                          <li class="tag__item" style="color:black"><i class="far fa-bookmark mr-2" ></i><span style="color:white">save</span></li>
+                                  
+
+                                      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(recipe.id, user_id: current_user), method: :post do |f| %>
+                             
+                                           <button type="submit" class="tag__item">
+                  <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>
+                                            </button>
                                        <%end%>
+
+
                                  <% else %>
-                                        <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete do %>
+                                        <%= link_to cookbook_path(recipe.cookbooks.where(user: current_user).first), method: :delete, remote: true do %>
                                        <li class="tag__item"><i class="fas fa-bookmark mr-2"></i><span style="color:white">saved</span></li>
                                          <%end%>
                                    <% end %>

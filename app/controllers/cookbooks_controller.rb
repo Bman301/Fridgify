@@ -15,7 +15,7 @@ class CookbooksController < ApplicationController
 
     if  @cookbook.save
       flash[:notice] = 'Saved!'
-      redirect_back(fallback_location: recipes_path)
+      redirect_back(fallback_location: recipes_path, anchor: "hola")
     else
         flash[:notice] = 'Not saved, try again!'
         redirect_back(fallback_location: recipes_path)
