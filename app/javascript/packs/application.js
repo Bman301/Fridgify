@@ -28,9 +28,15 @@ import { record } from "./voice";
 import { initStarRating } from '../plugins/init_star_rating';
 import { displayRating } from '../plugins/init_star_rating';
 
+import { addBookmark } from '../components/add_bookmark';
+
 document.addEventListener("turbolinks:load", () => {
   if (typeof document.getElementById("voice-recognition") !== 'undefined') { 
-    record();  } ;
+    record();  
+  } ;
+
   initStarRating();
   displayRating();
+  addBookmark();
 });
+
