@@ -1,7 +1,11 @@
 class CookbooksController < ApplicationController
 
   def index
-    @cookbooks = Cookbook.all
+    if current_user
+    @cookbooks = Cookbook.where(user: current_user)
+    else
+    @cookbooks = []  
+    end
   end
 
 
