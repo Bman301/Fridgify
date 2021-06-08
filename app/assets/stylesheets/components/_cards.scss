@@ -1,377 +1,440 @@
-        @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
-        $main-green: #79dd09 !default;
-        $main-green-rgb-015: rgba(121,
-        221,
-        9,
-        0.1) !default;
-        $main-yellow: #bdbb49 !default;
-        $main-yellow-rgb-015: rgba(189,
-        187,
-        73,
-        0.1) !default;
-        $main-red: #bd150b !default;
-        $main-red-rgb-015: rgba(189,
-        21,
-        11,
-        0.1) !default;
-        $main-blue: #0076bd !default;
-        $main-blue-rgb-015: rgba(0,
-        118,
-        189,
-        0.1) !default;
-        /* This pen */
-        
-        .dark {
-            background: #110f16;
-        }
-        
-        .light {
-            background: #f3f5f7;
-        }
-        
-        #pageHeaderTitle {
-            margin: 2rem 0;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 2.5rem;
-        }
-        /* Cards */
-        
-        .postcard {
-            flex-wrap: wrap;
-            display: flex;
-            box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-            border-radius: 10px;
-            margin: 0 0 2rem 0;
-            overflow: hidden;
-            position: relative;
-            color: #ffffff;
-            &.dark {
-                background-color: #18151f;
-            }
-            &.light {
-                background-color: #e1e5ea;
-            }
-            .t-dark {
-                color: #18151f;
-            }
-            .small {
-                font-size: 80%;
-            }
-            .postcard__title {
-                font-size: 1.75rem;
-            }
-            .postcard__img {
-                max-height: 180px;
-                width: 100%;
-                object-fit: cover;
-                position: relative;
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
-            }
-            .postcard__img_link {
-                display: contents;
-            }
-            .postcard__bar {
-                width: 50px;
-                height: 10px;
-                margin: 10px 0;
-                border-radius: 5px;
-                background-color: #424242;
-                transition: width 0.2s ease;
-            }
-            .postcard__text {}
-            .postcard__preview-txt {}
-            .postcard__tagbox {
-                display: flex;
-                flex-flow: row wrap;
-                font-size: 14px;
-                margin: 20px 0 0 0;
-                padding: 0;
-                justify-content: center;
-                .tag__item {
-                    display: inline-block;
-                    background: rgba(83, 83, 83, 0.4);
-                    border-radius: 3px;
-                    padding: 2.5px 10px;
-                    margin: 0 5px 5px 0;
-                    cursor: default;
-                    user-select: none;
-                    transition: background-color 0.3s;
-                    &:hover {
-                        background: rgba(83, 83, 83, 0.8);
-                    }
+                @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+                $main-green: #79dd09 !default;
+                $main-green-rgb-015: rgba(121,
+                221,
+                9,
+                0.1) !default;
+                $main-yellow: #bdbb49 !default;
+                $main-yellow-rgb-015: rgba(189,
+                187,
+                73,
+                0.1) !default;
+                $main-red: #bd150b !default;
+                $main-red-rgb-015: rgba(189,
+                21,
+                11,
+                0.1) !default;
+                $main-blue: #0076bd !default;
+                $main-blue-rgb-015: rgba(0,
+                118,
+                189,
+                0.1) !default;
+                /* This pen */
+                
+                .dark {
+                    background: #110f16;
                 }
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-image: linear-gradient(-70deg, #424242, transparent 50%);
-                opacity: 1;
-                border-radius: 10px;
-            }
-            &:hover .postcard__bar {
-                width: 100px;
-            }
-        }
-        
-        @media screen and (min-width: 469px) {
-            .postcard {
-                flex-wrap: inherit;
-                .postcard__title {
-                    font-size: 2rem;
+                
+                .light {
+                    background: #f3f5f7;
                 }
-                .postcard__tagbox {
-                    justify-content: start;
+                
+                #pageHeaderTitle {
+                    margin: 2rem 0;
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-size: 2.5rem;
                 }
-                .postcard__img {
-                    max-width: 300px;
-                    max-height: 100%;
-                    transition: transform 0.3s ease;
-                }
-                .postcard__text {}
-                /* own css */
-                .postcard_text_container {
+                /* Cards */
+                
+                .postcard {
+                    flex-wrap: wrap;
+                    display: flex;
+                    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+                    border-radius: 10px;
+                    margin: 0 0 2rem 0;
+                    overflow: hidden;
                     position: relative;
-                    width: 100%;
+                    color: #ffffff;
+                    &.dark {
+                        background-color: #18151f;
+                    }
+                    &.light {
+                        background-color: #e1e5ea;
+                    }
+                    .t-dark {
+                        color: #18151f;
+                    }
+                    .small {
+                        font-size: 80%;
+                    }
+                    .postcard__title {
+                        font-size: 1.75rem;
+                    }
+                    .postcard__img {
+                        max-height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        position: relative;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                    }
+                    .postcard__img_link {
+                        display: contents;
+                    }
+                    .postcard__bar {
+                        width: 50px;
+                        height: 10px;
+                        margin: 10px 0;
+                        border-radius: 5px;
+                        background-color: #424242;
+                        transition: width 0.2s ease;
+                    }
+                    .postcard__text {}
+                    .postcard__preview-txt {}
                     .postcard__tagbox {
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        left: 0;
+                        display: flex;
+                        flex-flow: row wrap;
+                        font-size: 14px;
+                        margin: 20px 0 0 0;
+                        padding: 0;
+                        justify-content: center;
                         .tag__item {
                             display: inline-block;
+                            background: rgba(83, 83, 83, 0.4);
+                            border-radius: 3px;
+                            padding: 2.5px 10px;
+                            margin: 0 5px 5px 0;
+                            cursor: default;
+                            user-select: none;
+                            transition: background-color 0.3s;
+                            &:hover {
+                                background: rgba(83, 83, 83, 0.8);
+                            }
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(-70deg, #424242, transparent 50%);
+                        opacity: 1;
+                        border-radius: 10px;
+                    }
+                    &:hover .postcard__bar {
+                        width: 100px;
+                    }
+                }
+                
+                @media screen and (min-width: 469px) {
+                    .postcard {
+                        flex-wrap: inherit;
+                        .postcard__title {
+                            font-size: 2rem;
+                        }
+                        .postcard__tagbox {
+                            justify-content: start;
+                        }
+                        .postcard__img {
+                            max-width: 300px;
+                            max-height: 100%;
+                            transition: transform 0.3s ease;
+                        }
+                        .postcard__text {}
+                        /* own css */
+                        .postcard_text_container {
+                            position: relative;
+                            width: 100%;
+                            .postcard__tagbox {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                left: 0;
+                                .tag__item {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                        .media.postcard__text:before {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            background: #18151f;
+                            top: -20%;
+                            height: 130%;
+                            width: 55px;
+                        }
+                        &:hover .postcard__img {
+                            transform: scale(1.1);
+                        }
+                        &:nth-child(2n+1) {
+                            flex-direction: row;
+                        }
+                        &:nth-child(2n+0) {
+                            flex-direction: row-reverse;
+                        }
+                        &:nth-child(2n+1) .postcard__text::before {}
+                        &:nth-child(2n+0) .postcard__text::before {}
+                    }
+                }
+                
+                @media screen and (min-width: 600px) {
+                    .postcard__text {
+                        padding: 2rem 3.5rem;
+                    }
+                    .postcard__text:before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        top: -20%;
+                        height: 130%;
+                        width: 55px;
+                    }
+                    .postcard.dark {
+                        .postcard__text:before {
+                            background: #18151f;
+                        }
+                    }
+                    .postcard.light {
+                        .postcard__text:before {
+                            background: #e1e5ea;
                         }
                     }
                 }
-                .media.postcard__text:before {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    background: #18151f;
-                    top: -20%;
-                    height: 130%;
-                    width: 55px;
+                /* COLORS */
+                
+                .postcard .postcard__tagbox .green.play:hover {
+                    background: $main-green;
+                    color: black;
                 }
-                &:hover .postcard__img {
-                    transform: scale(1.1);
+                
+                .green .postcard__title:hover {
+                    color: $main-green;
                 }
-                &:nth-child(2n+1) {
-                    flex-direction: row;
+                
+                .green .postcard__bar {
+                    background-color: $main-green;
                 }
-                &:nth-child(2n+0) {
-                    flex-direction: row-reverse;
+                
+                .green::before {
+                    background-image: linear-gradient( -30deg, $main-green-rgb-015, transparent 50%);
                 }
-                &:nth-child(2n+1) .postcard__text::before {}
-                &:nth-child(2n+0) .postcard__text::before {}
-            }
-        }
-        
-        @media screen and (min-width: 600px) {
-            .postcard__text {
-                padding: 2rem 3.5rem;
-            }
-            .postcard__text:before {
-                content: "";
-                position: absolute;
-                display: block;
-                top: -20%;
-                height: 130%;
-                width: 55px;
-            }
-            .postcard.dark {
-                .postcard__text:before {
-                    background: #18151f;
+                
+                .green:nth-child(2n)::before {
+                    background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
                 }
-            }
-            .postcard.light {
-                .postcard__text:before {
-                    background: #e1e5ea;
+                
+                .postcard .postcard__tagbox .blue.play:hover {
+                    background: $main-blue;
                 }
-            }
-        }
-        /* COLORS */
-        
-        .postcard .postcard__tagbox .green.play:hover {
-            background: $main-green;
-            color: black;
-        }
-        
-        .green .postcard__title:hover {
-            color: $main-green;
-        }
-        
-        .green .postcard__bar {
-            background-color: $main-green;
-        }
-        
-        .green::before {
-            background-image: linear-gradient( -30deg, $main-green-rgb-015, transparent 50%);
-        }
-        
-        .green:nth-child(2n)::before {
-            background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
-        }
-        
-        .postcard .postcard__tagbox .blue.play:hover {
-            background: $main-blue;
-        }
-        
-        .blue .postcard__title:hover {
-            color: $main-blue;
-        }
-        
-        .blue .postcard__bar {
-            background-color: $main-blue;
-        }
-        
-        .blue::before {
-            background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
-        }
-        
-        .blue:nth-child(2n)::before {
-            background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
-        }
-        
-        .postcard .postcard__tagbox .red.play:hover {
-            background: $main-red;
-        }
-        
-        .red .postcard__title:hover {
-            color: $main-red;
-        }
-        
-        .red .postcard__bar {
-            background-color: $main-red;
-        }
-        
-        .red::before {
-            background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
-        }
-        
-        .red:nth-child(2n)::before {
-            background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
-        }
-        
-        .postcard .postcard__tagbox .yellow.play:hover {
-            background: $main-yellow;
-            color: black;
-        }
-        
-        .yellow .postcard__title:hover {
-            color: $main-yellow;
-        }
-        
-        .yellow .postcard__bar {
-            background-color: $main-yellow;
-        }
-        
-        .yellow::before {
-            background-image: linear-gradient( -30deg, $main-yellow-rgb-015, transparent 50%);
-        }
-        
-        .yellow:nth-child(2n)::before {
-            background-image: linear-gradient( 30deg, $main-yellow-rgb-015, transparent 50%);
-        }
-        
-        @media screen and (min-width: 769px) {
-            .green::before {
-                background-image: linear-gradient( -80deg, $main-green-rgb-015, transparent 50%);
-            }
-            .green:nth-child(2n)::before {
-                background-image: linear-gradient( 80deg, $main-green-rgb-015, transparent 50%);
-            }
-            .blue::before {
-                background-image: linear-gradient( -80deg, $main-blue-rgb-015, transparent 50%);
-            }
-            .blue:nth-child(2n)::before {
-                background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
-            }
-            .red::before {
-                background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
-            }
-            .red:nth-child(2n)::before {
-                background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
-            }
-            .yellow::before {
-                background-image: linear-gradient( -80deg, $main-yellow-rgb-015, transparent 50%);
-            }
-            .yellow:nth-child(2n)::before {
-                background-image: linear-gradient( 80deg, $main-yellow-rgb-015, transparent 50%);
-            }
-        }
-        
-        //SHOW PAGE CARDS//
-        .recipe-wrapper {
-            justify-content: center;
-            margin: 30px;
-            padding: 40px;
-            border-radius: 10px;
-            width: 90%;
-            background-color: #ffffff;
-            box-shadow: 5px 5px #bda06a
-        }
-        
-        .title-bookmark {
-            display: flex;
-            justify-items: left;
-            justify-content: space-between;
-            width: 100%;
-        }
-        
-        .stars-reviews {
-            width: 100%;
-        }
-        
-        .info-card {
-            display: flex;
-        }
-        
-        .left-container {
-            width: 60%;
-            margin-right: 10px;
-        }
-        
-        .right-container {
-            background-color: #bda06a;
-            width: 40%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 10px;
-            border-radius: 0px 0px 20px 20px;
-        }
-        
-        .r-ingredients ul {
-            flex: row;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .specs-recipe {
-            text-align: center;
-            display: flex;
-            justify-content: space-around;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        
-        .r-spec {
-            width: 100%;
-        }
-        
-        .recipe-steps {
-            padding: 10px;
-        }
-
-
-        .postcard-styling{
-
-            height: 300px;
-            background-color: #FFFFFF;
-        }
+                
+                .blue .postcard__title:hover {
+                    color: $main-blue;
+                }
+                
+                .blue .postcard__bar {
+                    background-color: $main-blue;
+                }
+                
+                .blue::before {
+                    background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+                }
+                
+                .blue:nth-child(2n)::before {
+                    background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+                }
+                
+                .postcard .postcard__tagbox .red.play:hover {
+                    background: $main-red;
+                }
+                
+                .red .postcard__title:hover {
+                    color: $main-red;
+                }
+                
+                .red .postcard__bar {
+                    background-color: $main-red;
+                }
+                
+                .red::before {
+                    background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+                }
+                
+                .red:nth-child(2n)::before {
+                    background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+                }
+                
+                .postcard .postcard__tagbox .yellow.play:hover {
+                    background: $main-yellow;
+                    color: black;
+                }
+                
+                .yellow .postcard__title:hover {
+                    color: $main-yellow;
+                }
+                
+                .yellow .postcard__bar {
+                    background-color: $main-yellow;
+                }
+                
+                .yellow::before {
+                    background-image: linear-gradient( -30deg, $main-yellow-rgb-015, transparent 50%);
+                }
+                
+                .yellow:nth-child(2n)::before {
+                    background-image: linear-gradient( 30deg, $main-yellow-rgb-015, transparent 50%);
+                }
+                
+                @media screen and (min-width: 769px) {
+                    .green::before {
+                        background-image: linear-gradient( -80deg, $main-green-rgb-015, transparent 50%);
+                    }
+                    .green:nth-child(2n)::before {
+                        background-image: linear-gradient( 80deg, $main-green-rgb-015, transparent 50%);
+                    }
+                    .blue::before {
+                        background-image: linear-gradient( -80deg, $main-blue-rgb-015, transparent 50%);
+                    }
+                    .blue:nth-child(2n)::before {
+                        background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
+                    }
+                    .red::before {
+                        background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
+                    }
+                    .red:nth-child(2n)::before {
+                        background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
+                    }
+                    .yellow::before {
+                        background-image: linear-gradient( -80deg, $main-yellow-rgb-015, transparent 50%);
+                    }
+                    .yellow:nth-child(2n)::before {
+                        background-image: linear-gradient( 80deg, $main-yellow-rgb-015, transparent 50%);
+                    }
+                }
+                
+                //SHOW PAGE CARDS//
+                .recipe-wrapper {
+                    justify-content: center;
+                    margin: 30px;
+                    padding: 40px;
+                    border-radius: 10px;
+                    width: 90%;
+                    background-color: #ffffff;
+                    box-shadow: 5px 5px #bda06a
+                }
+                
+                .title-bookmark {
+                    display: flex;
+                    justify-items: left;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+                
+                .rating-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
+                .stars-reviews {
+                    width: 50%;
+                }
+                
+                .info-card {
+                    display: flex;
+                }
+                
+                .left-container {
+                    width: 60%;
+                    margin-right: 10px;
+                }
+                
+                .right-container {
+                    text-align: center;
+                    background-color: #bda06a;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 20px;
+                    border-radius: 0px 0px 20px 20px;
+                }
+                
+                .r-ingredients ul {
+                    flex: row;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                
+                .specs-recipe {
+                    text-align: center;
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 5px;
+                    border-radius: 5px;
+                }
+                
+                .r-spec {
+                    width: 100%;
+                    justify-content: center;
+                }
+                
+                .recipe-steps {
+                    padding: 10px;
+                }
+                
+                .postcard-styling {
+                    height: 300px;
+                    background-color: #FFFFFF;
+                }
+                
+                .fas-show {
+                    font-size: 40px;
+                }
+                
+                @media screen and (max-width: 600px) {
+                    .recipe-wrapper {
+                        padding: 10px;
+                    }
+                    .title-bookmark {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .tag__item {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .info-card {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .left-container {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    .right-container {
+                        background-color: #bda06a;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 20px;
+                        border-radius: 0px 0px 20px 20px;
+                    }
+                    .rating-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .br-widget {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .fas-show {
+                        font-size: 30px;
+                    }
+                    h1 {
+                        font-size: 25px;
+                        text-align: center;
+                    }
+                    h2 {
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                    p {
+                        font-size: 15px;
+                        text-align: center;
+                    }
+                }
