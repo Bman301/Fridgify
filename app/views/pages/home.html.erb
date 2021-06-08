@@ -12,7 +12,7 @@
             <div class="w-100">
               <%= form_tag recipes_path, method: :get do %>
                <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0",  id:"SpeechToText",
-               placeholder: "       ...What's in your fridge?"
+               placeholder: "       ...What's in your fridge?", required: true
               %>
             </div>
 
