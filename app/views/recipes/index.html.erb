@@ -6,23 +6,24 @@ body {
 </style>
 
 <div class="container-fluid mb-5">
-<div class="row">
-<div class="col-2"></div>
-<div class="col-9 d-flex justify-content-between bg-white p-0 " style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
-<div class="mic m-3 p-3" id="voice-recognition"><i style="color:black;font-size:30px" class="fas fa-microphone btn mx-3 w-100 h-100"></i></div>
-    <div class="searchbar m-3 d-flex align-items-center" >
-    <span style="width:100%; font-size:30px">   <%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", id:"SpeechToText", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
-    </div>
-    <div class="rounded p-3 m-3">
-        <%= submit_tag "Search", class: "btn btn-info" %>
-        <% end %>
-      </div></div></div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 d-flex justify-content-between bg-white p-0 " style="background-color:white;border-radius:40px;width:100%;box-shadow: 5px 5px 15px 5px #957F58;">
+                <div class="mic m-3 p-3" id="voice-recognition"><i style="color:black;font-size:30px" class="fas fa-microphone btn mx-3 w-100 h-100"></i></div>
+                    <div class="searchbar m-3 d-flex align-items-center" >
+                    <span style="width:100%; font-size:30px">   <%= form_tag recipes_path, method: :get do %>
+                    <%= text_field_tag :query, '', class: "form-control rounded-pill w-100", id:"SpeechToText", placeholder: "...What's in your fridge?", style:"font-size:1.2 em;border:none" %>
+                    </div>
+                    <div class="rounded p-3 m-3">
+                        <%= submit_tag "Search", class: "btn btn-info" %>
+                        <% end %>
+                      </div></div></div>
 
       <div class="container mt-5 w-25 rounded">
       <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
       </div>
 
+</div>
 
     <div class="row mt-5">
 
@@ -36,8 +37,8 @@ body {
                 <div class="postcard_text_container" style="background-color:white">
                     <h1 class="postcard__title mt-4"><a href="<%=recipe_path(recipe.id)%>" style="color:black;text-decoration: none;"><%= recipe.title %></a></h1>
                     <div class="postcard__bar"></div>
-                    <div class="postcard__preview-txt mb-3" style="color:grey"><%= strip_tags(recipe.description.truncate_words(15)) %></div><br><br>
-                           <ul class="postcard__tagbox">
+                    <div class="postcard__preview-txt mb-3" style="color:grey"><%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
+                           <ul class="postcard__tagbox mb-3">
                                 <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
                                   <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
                                 <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
