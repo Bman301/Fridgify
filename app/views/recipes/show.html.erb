@@ -1,5 +1,5 @@
 
-  <div class="recipe-wrapper mx-auto" style="max-width: 900px" >
+  <div class="recipe-wrapper mx-auto" style="width: 1280" >
 
     <div class="title-bookmark">
       <div class="r-title">
@@ -9,11 +9,11 @@
       <% if !current_user.nil? %>
           <% if @recipe.cookbooks.where(user: current_user).empty?  %>
             <%= link_to recipe_cookbooks_path(@recipe.id, user_id: current_user), method: :post do %>
-              <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2" ></i></li>
+              <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark" ></i></li>
               <%end%>
             <% else %>
             <%= link_to cookbook_path(@recipe.cookbooks.where(user: current_user).first), method: :delete do %>
-              <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>
+              <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark"></i></li>
             <%end%>
             <% end %>
             <% end %>
@@ -21,36 +21,38 @@
       </div>
     </div>
 
-    <% if !current_user.nil? %>
+    <div class="rating-wrapper">
+      <% if !current_user.nil? %>
+        <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
+          <div class="stars-reviews width:50%">
+            My rating:&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
+                            <%= f.input :rating, collection: (1..5).to_a, label: false %>
+                            <% end %>
+          </div>          
 
-                          <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
+        <% else %>
+          <p>Thanks for rating this recipe!</p>
+        <% end %>
+        <% else %>
+          <p>Login or signup to rate this recipe</p>
+        <% end %>
 
-                      <div class="stars-reviews ">
-                    My rating:&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
-                          <%= f.input :rating, collection: (1..5).to_a, label: false %>
-                        <% end %>
-                      </div>          
-
-                  <% else %>
-                  <p>Thanks for rating this recipe!</p>
-                  <% end %>
-
-                    <% else %>
-
-                    <p>Login or signup to rate this recipe</p>
-    <% end %>
-
-        <div class=" d-inline-flex align-items-bottom">
+      <div class="align-items-bottom width:50%">
         <div id="thisrating" data-rating="<%= @recipe.rating %>"></div>
-        <br><div class="align-items-center"><p>Global rating:
-        <select id="diplay-rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select></p>
- </div></div>
+          <div class="align-items-center">
+            <p>Global rating
+              <select id="diplay-rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </p>
+          </div>
+        </div>
+      </div>
+    
 
     <div class="d-flex info-card">
       <div class="left-container">
@@ -62,10 +64,9 @@
           <% end %>
         </div>
       </div>    
-      <div class="right-container">
-        <h2 style="text-align: center">Ingredients</h2>
-        <div class="r-ingredients"style="text-align: left; list-style:none">
-          
+      <div class="right-container width: 1280">
+        <h2 text-align: center">Ingredients</h2>
+        <div class="r-ingredients"style="text-align: left; list-style:none ">
             <ul>
               <p>
                 <% @recipe.recipe_ingredients.each do |recipe_ingredient| %> 
@@ -78,21 +79,21 @@
 
         <div class="specs-recipe">
           <div class="r-spec ">
-            <i class="far fa-clock" style="font-size: 30px"></i>
+            <i class="fas fa-clock"></i>
             <p> 
               <%= @recipe.prep_time %> 
             </p>
           </div>
 
           <div class="r-spec">
-            <i class="fas fa-tachometer-alt" style="font-size: 30px"></i>
+            <i class="fas fa-thermometer-half"></i>
             <p> 
               <%= @recipe.difficulty_level %>
             </p>
           </div>
 
           <div class="r-spec">
-            <i class="fas fa-user" style="font-size: 30px"></i>
+            <i class="fas fa-user"></i>
             <p> 
               <%= @recipe.serving_size %>
             </p>
@@ -102,7 +103,7 @@
     </div>
 
         <div class="recipe-steps">
-          <h2>Lets do it!</h2>
+          <h2 class="123">Lets do it!</h2>
           <p> <%= @recipe.description.html_safe %> </p>
         </div>
   </div>

@@ -1,60 +1,68 @@
-.footer-basic {
-    width: 100%;
-    padding: 15px 0;
-    background-color: #1d1c21;
-    color: #bda06a;
-}
-
-.footer-basic ul {
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-
-.footer-basic li {
-    padding: 0 5px;
-}
-
-.footer-basic ul a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.8;
-}
-
-.footer-basic ul a:hover {
-    opacity: 1;
-}
-
-.footer-basic .social {
-    text-align: center;
-    padding-bottom: 15px;
-}
-
-.footer-basic .social>a {
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid #bda06a;
-    margin: 0 8px;
-    color: inherit;
-    opacity: 0.75;
-}
-
-.footer-basic .social>a:hover {
-    opacity: 0.9;
-}
-
-.footer-basic .copyright {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: #bda06a;
-    margin-bottom: 0;
-}
+            .footer-basic {
+                width: 100%;
+                padding: 15px 0;
+                background-color: #1d1c21;
+                color: #bda06a;
+            }
+            
+            .footer-basic ul {
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
+            
+            .footer-basic li {
+                padding: 0 5px;
+            }
+            
+            .footer-basic ul a {
+                color: white;
+                text-decoration: none;
+                opacity: 0.8;
+            }
+            
+            .footer-basic ul a:hover {
+                opacity: 1;
+            }
+            
+            .footer-basic .social {
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            
+            .footer-basic .social>a {
+                font-size: 24px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid #bda06a;
+                margin: 0 8px;
+                color: inherit;
+                opacity: 0.75;
+            }
+            
+            .footer-basic .social>a:hover {
+                opacity: 0.9;
+            }
+            
+            .footer-basic .copyright {
+                margin-top: 15px;
+                text-align: center;
+                font-size: 13px;
+                color: #bda06a;
+                margin-bottom: 0;
+            }
+            
+            @media screen and (max-width: 600px) {
+                .fab {
+                    display: inline;
+                    justify-content: left;
+                    padding: 1px;
+                }
+            }
