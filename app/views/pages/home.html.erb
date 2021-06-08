@@ -4,20 +4,20 @@
   <div class="container-fluid px-0" style="height: 615px">
     <div class="home-video-wrapper">
       <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
-      <div class="info-welcome ml-5 w-50">
-        <h1 class="display-1" style="font-family: 'Montserrat';color: white;margin-top: 50px;margin-left: 40px;">Hungry?</h1>
-        <p class="question" style="font-family: 'Montserrat';color: white;margin-top: 25px;margin-left: 40px;">Tell me what's in your fridge, and I'll tell you what to cook!</p>
-          <div class="searchbar d-flex justify-content-end bg-white p-2 w-75 ml-5" style="border-radius:10px!important";>
-            <div class="mic" id="voice-recognition"><i id="microphone" style="color:white" class="fas fa-microphone btn btn btn-dark w-100 h-100"></i></div>
-            <div class="w-100">
+      <div class="info-welcome">
+        <h1 style="font-family: 'Montserrat';color: white;">Hungry?</h1>
+        <p class="question" style="font-family: 'Montserrat';color: white">Tell me what's in your fridge, and I'll tell you what to cook!</p>
+          <div class="searchbar bg-white">
+            <div class="mic" id="voice-recognition">
+              <i id="microphone"  class="fas fa-microphone btn"></i>
+            </div>
+            <div class="input-bar">
               <%= form_tag recipes_path, method: :get do %>
                <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0",  id:"SpeechToText",
-               placeholder: "       ...What's in your fridge?", required: true
-              %>
+               placeholder: "What's in your fridge?", required: true %>
             </div>
-
-            <div class="rounded">
-              <%= submit_tag "Search",  class: "btn btn btn-dark",  id: "formButton" %>
+            <div class="s-button">
+              <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
               <% end %>
             </div>
           </div>
