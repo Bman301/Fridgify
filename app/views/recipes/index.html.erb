@@ -19,8 +19,8 @@ body {
         <% end %>
       </div></div></div>
 
-      <div class="container mt-5 w-25 rounded">
-      <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
+      <div class="container" id="advanced-search">
+        <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
       </div>
 
 
