@@ -13,16 +13,19 @@ const initStarRating = () => {
 
 
   const displayRating = () => {
-    const score = document.getElementById("thisrating").dataset.rating;
-    var number = parseFloat(score);
-    var number = number / 20;
-    $('#diplay-rating').barrating({
-      theme: 'css-stars',
-      initialRating: number,
-      readonly: 'true'
-    });
+    const score = document.getElementById("thisrating");
+    if (score){
+      const score2 = score.dataset.rating;
+      var number = parseFloat(score2);
+      var number = number / 20;
+      $('#diplay-rating').barrating({
+        theme: 'css-stars',
+        initialRating: number,
+        readonly: 'true'
+      });
+     }
   };
-
+  
 
 export { initStarRating };
 export {displayRating };

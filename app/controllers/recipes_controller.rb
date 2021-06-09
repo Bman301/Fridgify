@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
     end
 
     @recipes = @recipes.flatten - [nil]
+    @recipes = @recipes.take(6)
 
   end
 
@@ -35,20 +36,58 @@ class RecipesController < ApplicationController
   end
 
   def api_call
-    api_key = "d0b142a570734c37a523f144e830fcae"
-    @recipes = [];
+    api_key = "8125a13e97764742a7910c93056f7fed"
+    recipes = [];
+    @saved_recipes = [];
 
     url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{params[:query]}&number=5&apiKey=#{api_key}"
     five_recipes = URI.open(url).read
-    @recipes_ingredients = JSON.parse(five_recipes)
+    recipes_ingredients = JSON.parse(five_recipes)
 
-    @recipes_ingredients.each do |recipe|
+    recipes_ingredients.each do |recipe|
       url = "https://api.spoonacular.com/recipes/#{recipe["id"]}/information?includeNutrition=false&apiKey=#{api_key}"
       one_recipe = URI.open(url).read
       parsed_recipe = JSON.parse(one_recipe)
 
-      @recipes.push(parsed_recipe)
+      recipes.push(parsed_recipe)
     end
+
+    recipes.each do |recipe|
+      existing_recipe = Recipe.find_by(title: recipe["title"])
+      unless existing_recipe
+        new_recipe = Recipe.create!(
+          image: recipe["image"],
+          title: recipe["title"],
+          prep_time: recipe["readyInMinutes"].to_s,
+          description: recipe["summary"],
+          serving_size: recipe["servings"].to_s,
+          rating: recipe["spoonacularScore"].to_i,
+          difficulty_level: recipe["readyInMinutes"].to_s,
+          steps: recipe["instructions"]
+        )
+
+        recipe["extendedIngredients"].each do |ingredient|
+          existing_ingredient = Ingredient.find_by(name: ingredient["name"])
+          unless existing_ingredient
+          existing_ingredient = Ingredient.create!(
+            name: ingredient["name"],
+            api_response: ingredient["id"]
+          )
+          end
+
+          if existing_ingredient
+          RecipeIngredient.create!(
+            amount: ingredient['original'],
+            recipe: new_recipe,
+            ingredient: existing_ingredient
+          )
+          end
+        end
+
+        @saved_recipes.push(new_recipe)
+      end
+    end
+
   end
 
   private

@@ -30,7 +30,7 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
-  <body>
+  <body data-controller="<%=params[:controller] %>" data-action="<%=params[:action] %>" >
 
 <% if content_for? :nav %>
   <%= content_for :nav %>
