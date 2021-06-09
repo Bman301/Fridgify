@@ -24,8 +24,8 @@
     <div class="rating-wrapper">
       <% if !current_user.nil? %>
         <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
-          <div class="stars-reviews width:50%">
-            My rating:&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
+          <div class="stars-reviews">
+            My rating&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
                             <%= f.input :rating, collection: (1..5).to_a, label: false %>
                             <% end %>
           </div>          

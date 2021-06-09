@@ -397,6 +397,16 @@
                         display: flex;
                         justify-content: center;
                     }
+                    .stars-reviews {
+                        text-align: center;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .br-widget {
+                        width: 100%;
+                        align-self: center;
+                    }
                     .info-card {
                         display: flex;
                         flex-direction: column;
