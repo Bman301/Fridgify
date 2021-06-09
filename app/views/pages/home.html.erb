@@ -1,73 +1,78 @@
 <% content_for :nav, render('custom_nav') %>
 
 
-  <div class="container-fluid px-0" style="height: 615px">
-    <div class="home-video-wrapper">
-      <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
-      <div class="info-welcome">
-        <h1 style="font-family: 'Montserrat';color: white;">Hungry?</h1>
-        <p class="question" style="font-family: 'Montserrat';color: white">Tell me what's in your fridge, and I'll tell you what to cook!</p>
-          <div class="searchbar bg-white">
-            <div class="mic" id="voice-recognition">
-              <i id="microphone"  class="fas fa-microphone btn"></i>
-            </div>
-            <div class="input-bar">
-              <%= form_tag recipes_path, method: :get do %>
-               <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0",  id:"SpeechToText",
+<div class="container-fluid px-0" style="height: 615px">
+  <div class="home-video-wrapper">
+    <%= cl_video_tag("fridge.mp4", autoplay: :true, loop: :true, mute: :mute, class: "home_video") %>
+    <div class="info-welcome">
+      <h1 style="font-family: 'Montserrat';color: white;">Hungry?</h1>
+      <p class="question" style="font-family: 'Montserrat';color: white">Tell me what's in your fridge, and I'll tell
+        you what to cook!</p>
+      <div class="searchbar bg-white">
+        <div class="mic" id="voice-recognition">
+          <i id="microphone" class="fas fa-microphone btn"></i>
+        </div>
+        <div class="input-bar">
+          <%= form_tag recipes_path, method: :get do %>
+          <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 m-0",  id:"SpeechToText",
                placeholder: "What's in your fridge?", required: true %>
-            </div>
-            <div class="s-button">
-              <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
-              <% end %>
-            </div>
-          </div>
-
         </div>
-    </div>
-
-</div>
-    <div class="container-fluid d-flex justify-content-center pt-5" style="background-color: #1d1c21" >
-      <div class="inf-cards row">
-        <div class="inf-card col-4 justify-content-center mt-3">
-          <%= cl_image_tag("voice-message_1_vwg72i.png", :width=>70, :crop=>"scale") %>
-          <h2 class="">Voice&type input</h2>
-          <p class="">Type or tell us what you have on your fridge.</p>
-        </div>
-        <div div class="inf-card col-4 justify-content-center mt-3">
-          <%= cl_image_tag("diet_bgjlq1.png", :width=>70, :crop=>"scale") %>
-          <h2>Find "the" recipe</h2>
-          <p class="">Exactly with what you have at home.</p>
-        </div>
-        <div class="inf-card col-4 justify-content-center mt-3">
-          <%= cl_image_tag("recipe_a4xzyb.png", :width=>70, :crop=>"scale") %>
-          <h2 class="">Create your own</h2>
-          <p>Add more recipes to our comunity.</p>
+        <div class="s-button">
+          <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
+          <% end %>
         </div>
       </div>
+
     </div>
+  </div>
+
+</div>
+<div class="container-fluid d-flex justify-content-center pt-5" style="background-color: #1d1c21">
+  <div class="inf-cards row">
+    <div class="inf-card col-4 justify-content-center mt-3">
+      <%= cl_image_tag("voice-message_1_vwg72i.png", :width=>70, :crop=>"scale") %>
+      <h2 class="">Voice&type input</h2>
+      <p class="">Type or tell us what you have on your fridge.</p>
+    </div>
+    <div div class="inf-card col-4 justify-content-center mt-3">
+      <%= cl_image_tag("diet_bgjlq1.png", :width=>70, :crop=>"scale") %>
+      <h2>Find "the" recipe</h2>
+      <p class="">Exactly with what you have at home.</p>
+    </div>
+    <div class="inf-card col-4 justify-content-center mt-3">
+      <%= cl_image_tag("recipe_a4xzyb.png", :width=>70, :crop=>"scale") %>
+      <h2 class="">Create your own</h2>
+      <p>Add more recipes to our comunity.</p>
+    </div>
+  </div>
+</div>
 <div class="container-fluid pt-5 pb-5" style="background-color: #1d1c21">
-    <div id="demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption">
-                    <p>The best web app in the world, I just input what I have on my fridge and it gives me the best recipes I can make! </p> <img src="https://i.imgur.com/lE89Aey.jpg">
-                    <div id="image-caption">Pedro Ramirez</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>LIFE SAVER, I dont have time to go out and buy more stuff so I just ask Fridgify to give what they got based on the food I have.</p> <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
-                    <div id="image-caption">Titch Devvo</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>Now I dont waste any food, good for the world and good for me, Im also learning how to cook...Thanks @Fridgify!!!</p> <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
-                    <div id="image-caption">Brayan Rodriguez</div>
-                </div>
-            </div>
-        </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class="fas fa-arrow-left pl-5"></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right pr-5'></i> </a>
-    </div>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-caption">
+          <p>The best web app in the world, I just input what I have on my fridge and it gives me the best recipes I can
+            make! </p> <img src="https://i.imgur.com/lE89Aey.jpg">
+          <div id="image-caption">Pedro Ramirez</div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-caption">
+          <p>LIFE SAVER, I dont have time to go out and buy more stuff so I just ask Fridgify to give what they got
+            based on the food I have.</p> <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
+          <div id="image-caption">Titch Devvo</div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-caption">
+          <p>Now I dont waste any food, good for the world and good for me, Im also learning how to cook...Thanks
+            @Fridgify!!!</p> <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+          <div id="image-caption">Brayan Rodriguez</div>
+        </div>
+      </div>
+    </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class="fas fa-arrow-left pl-5"></i> </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right pr-5'></i> </a>
+  </div>
 </div>
 <script>
 
