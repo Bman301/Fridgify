@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   validates :title, uniqueness: true
 
   def self.by_ingredient(ingredient_name)
-    Recipe.joins(recipe_ingredients: :ingredient).where( 'ingredients.name ILIKE ?', "%#{ingredient_name}%")
+    Recipe.joins(recipe_ingredients: :ingredient).where( 'ingredients.name ILIKE ?', "%#{ingredient_name}%").order("rating DESC")
   end
 
 end
