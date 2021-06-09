@@ -35,8 +35,14 @@ document.addEventListener("turbolinks:load", () => {
     record();  
   } ;
 
-  initStarRating();
-  displayRating();
+
   addBookmark();
+  
+  const newRating = document.querySelector(".br-theme-css-stars");
+  if (newRating === null){
+    displayRating();
+    initStarRating();
+  }
 });
+
 

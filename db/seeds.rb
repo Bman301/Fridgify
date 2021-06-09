@@ -49,7 +49,7 @@ Dir.each_child("./data") do |file|
         prep_time: recipe["readyInMinutes"].to_s,
         description: recipe["summary"],
         serving_size: recipe["servings"].to_s,
-        rating: recipe["spoonacularScore"].to_i,
+        rating: recipe["spoonacularScore"].to_i / 20,
         difficulty_level: recipe["readyInMinutes"].to_s,
         steps: recipe["instructions"]
       )

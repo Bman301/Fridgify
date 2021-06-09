@@ -54,36 +54,31 @@
             <%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
           <ul class="postcard__tagbox mb-3">
             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
-            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
+            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %></li>
             <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
 
-            <% if !current_user.nil? %>
+       <% if !current_user.nil? %>
 
-            <% if recipe.cookbooks.where(user: current_user).empty?  %>
+                                 <% if recipe.cookbooks.where(user: current_user).empty?  %>
 
-            <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(recipe.id, user_id: current_user), html: { "data-id": recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
-            <button type="submit" class="tag__item" id="button-<%= recipe.id %>">
-              <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span
-                  style="color:white">save</span></li>
-            </button>
-            <%end%>
+                                      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(recipe.id, user_id: current_user), html: { "data-id": recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+                                           <button type="submit" class="tag__item" id="button-<%= recipe.id %>">
+                                             <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>
+                                            </button>
+                                       <%end%>
 
-            <% else %>
-            <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(recipe.id, user_id: current_user), html: { "data-id": recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
-            <button type="submit" class="tag__item" id="button-<%= recipe.id %>">
-              <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span
-                  style="color:black">saved</span></li>
-            </button>
-            <%end%>
+                                 <% else %>
+                                     <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(recipe.id, user_id: current_user), html: { "data-id": recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+                                           <button type="submit" class="tag__item" id="button-<%= recipe.id %>">
+                                             <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:black">saved</span></li>
+                                            </button>
+                                       <%end%>
 
-            <% end %>
-            <% else %>
-            <a href="#" data-toggle="modal" data-target="#modalUp">
-              <li class="tag__item" style="color:black"><i class="fas fa-user-plus mr-2"></i><span
-                  style="color:white">sign up</span></li>
-            </a>
+                                 <% end %>
+                  <% else %>
+                  <a href="#" data-toggle="modal" data-target="#modalUp">  <li class="tag__item" style="color:black"><i class="fas fa-user-plus mr-2" ></i><span style="color:white">sign up</span></li> </a>
 
-            <%end%>
+                <%end%>
 
           </ul>
         </div>
