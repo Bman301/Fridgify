@@ -27,7 +27,8 @@ body {
 
   <div class="row mt-5">
   <% if @saved_recipes.empty? %>
-     <h1 class="text-center">Sorry there are not more recipes with the ingredients that you chose!</h1>
+    <h3 class="container text-center mt-5"><i class="fas fa-exclamation"></i>No results<i class="far fa-frown"></i><br>
+      Try again with different ingredients!</h3>
   <%else%>
     <% @saved_recipes.each do |recipe| %>
 
