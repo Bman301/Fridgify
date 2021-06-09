@@ -64,29 +64,6 @@
         <% end %>
       </div>
     </div>
-    <div class="right-container width: 1280">
-      <h2 text-align: center">Ingredients</h2>
-      <div class="r-ingredients" style="text-align: left; list-style:none ">
-        <ul>
-          <p>
-            <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-
-            <li> <strong> <%=  recipe_ingredient.ingredient.name.capitalize %> :</strong> &nbsp
-              <%= recipe_ingredient.amount %></li>
-            <% end %>
-          </p>
-        </ul>
-      </div>
-
-      <div class="specs-recipe">
-        <div class="r-spec ">
-          <i class="fas fas-show fa-clock"></i>
-          <p>
-            <%= @recipe.prep_time %>
-          </p>
-        </div>
-
-      </div>    
       <div class="right-container">
         <h2 style="text-align: center">Ingredients</h2>
         <div class="r-ingredients"style="text-align: left; list-style:none">
@@ -121,14 +98,19 @@
             <p> 
               <%= @recipe.serving_size %>
             </p>
+            
           </div>
+          
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="recipe-steps">
+</div>
+
+      </div>
+             <div class="recipe-steps">
     <h2 class="123">Lets do it!</h2>
     <p> <%= @recipe.description.html_safe %> </p>
   </div>
-</div>
+    </div>
+  </div>
+
+  
