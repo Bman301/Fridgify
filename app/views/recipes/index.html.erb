@@ -58,7 +58,7 @@
             <%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
           <ul class="postcard__tagbox mb-3">
             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
-            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %> / 5</li>
+            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %></li>
             <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= recipe.difficulty_level %></li>
 
        <% if !current_user.nil? %>
