@@ -5,17 +5,30 @@
       <h1> <%= @recipe.title %> </h1>
     </div>
     <div>
+
+
+
       <% if !current_user.nil? %>
-      <% if @recipe.cookbooks.where(user: current_user).empty?  %>
-      <%= link_to recipe_cookbooks_path(@recipe.id, user_id: current_user), method: :post do %>
-      <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none"><i class="far fa-bookmark"></i>
-      </li>
-      <%end%>
-      <% else %>
-      <%= link_to cookbook_path(@recipe.cookbooks.where(user: current_user).first), method: :delete do %>
-      <li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark"></i></li>
-      <%end%>
-      <% end %>
+
+
+                                   <% if @recipe.cookbooks.where(user: current_user).empty?  %>
+                                      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+                                           <button type="submit" class="tag__item" id="button-<%= @recipe.id %>">
+                                             <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>
+                                            </button>
+                                       <%end%>
+
+                                 <% else %>
+                                     <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+                                           <button type="submit" class="tag__item" id="button-<%= @recipe.id %>">
+                                             <li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:black">saved</span></li>
+                                            </button>
+                                       <%end%>
+
+                                 <% end %>
+
+      
+
       <% end %>
 
     </div>

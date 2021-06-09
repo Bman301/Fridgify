@@ -53,14 +53,14 @@ const addBookmark = () => {
 
                                 }
                                 else{
-                                    if (document.querySelector("body").dataset.controller === "cookbooks"){
+                                    if (document.querySelector("body").dataset.controller === "cookbooks"  && document.querySelector("body").dataset.action === "index" ){
 
                           
                                      fade(item.parentElement.parentElement.parentElement.parentElement);
 
                                     }
                                     else if (document.querySelector("body").dataset.controller === "cookbooks" && document.querySelector("body").dataset.action === "show" ){
-                                        console.log("show");
+                                        buttonId.innerHTML = '<li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>';
 
                                     }
                                     else{
