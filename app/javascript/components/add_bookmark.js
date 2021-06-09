@@ -47,22 +47,41 @@ const addBookmark = () => {
                     .then((data) => {
                         const buttonId = document.getElementById(`button-${recipe_id}`);
                         
+
+
+            if (document.querySelector("body").dataset.controller === "recipes" && document.querySelector("body").dataset.action === "show" ){
+      
+
+                if (data.recipe_id){
+                                
+                    buttonId.innerHTML = '<li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>';
+
+                }
+                else{
+
+                    buttonId.innerHTML = '<li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2"></i></li>';
+
+                }
+                            
+            }
+            else{
+
+
+
+
                                 if (data.recipe_id){
                                 
                                     buttonId.innerHTML = '<li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:black">saved</span></li>';
 
                                 }
                                 else{
-                                    if (document.querySelector("body").dataset.controller === "cookbooks"){
+                                    if (document.querySelector("body").dataset.controller === "cookbooks" && document.querySelector("body").dataset.action === "index" ){
 
                           
                                      fade(item.parentElement.parentElement.parentElement.parentElement);
 
                                     }
-                                    else if (document.querySelector("body").dataset.controller === "cookbooks" && document.querySelector("body").dataset.action === "show" ){
-                                        console.log("show");
-
-                                    }
+                             
                                     else{
                                         buttonId.innerHTML = '<li style="list-style-type: none"><i class="far fa-bookmark mr-2"></i><span  style="color:white">save</span></li>';
 
@@ -70,6 +89,9 @@ const addBookmark = () => {
                         
                        
                                 }
+
+
+                            }
                                         
                             }  );
                             
