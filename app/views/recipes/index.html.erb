@@ -4,7 +4,7 @@
   }
 </style>
 
-     
+
   <div class="container" id="advanced-search">
    <div class="searchindex bg-white w-100 d-flex justify-content-around p-2" style="width: 75%">
         <div class="mic" id="voice-recognition">
@@ -23,9 +23,9 @@
           <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
         </div>
     </div>
-        
+
     </div>
- 
+
   <% if @recipes.count == 0 %>
   <div class="row mx-auto text-center d-flex justify-content-center mt-5">
     <h4 class="mt-6">No results, try our advance search.</h4>
@@ -33,7 +33,7 @@
   <% end %>
 
 
-  <div class="row mt-5">
+  <div class="row mt-5 ml-3 mr-3">
 
     <% @recipes.each do |recipe| %>
 
