@@ -1,33 +1,52 @@
-<div class="container">
+<div class="container d-flex flex-column justify-content-center align-items-center">
 <%= form_for @recipe do |f| %>
-  <div id="d-flex flex-column justify-content-end align-items-end">
-    <div class="fields">
-      Title: <%= f.text_field :title %><br />
+  <div class="">
+    <div class=" d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3">Title:</p>
+      <%= f.text_field :title %><br />
     </div>
-    <div class="fields">
-      Image : <%= f.text_field :image%><br />
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+       <p class="mr-3">Image:</p>
+       <%= f.text_field :image%><br />
     </div>
-    <div class="fields">
-      Serving Size : <%= f.text_field :serving_size%><br />
-    <div class="fields">
-      Comment : <%= f.text_area :description %><br />
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3">Serving Size: </p>
+      <%= f.text_field :serving_size%><br />
     </div>
-    <div class="fields">
-      Preparation Time : <%= f.text_field :prep_time %><br />
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3">Preparation Time:</p>
+      <%= f.text_field :prep_time %><br />
     </div>
-    <div class="fields">
-      Description : <%= f.text_area :description %><br /></div>
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3">Difficulty Level:</p>
+       <%= f.text_field :serving_size%><br />
     </div>
-    <div class="fields">
-      Difficulty Level : <%= f.text_field :serving_size%><br />
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3"> Rating:</p>
+      <%= f.number_field :rating, step: :any%><br />
     </div>
-    <div class="fields">
-      Rating : <%= f.number_field :rating, step: :any%><br />
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3"> Description:</p>
+      <%= f.text_area :description %><br /></div>
     </div>
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <p class="mr-3">Comment:</p>
+       <%= f.text_area :description %><br />
+    </div>
+
   </div>
 
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <%= f.submit %>
+  </div>
 
-  <%= f.submit %>
 <% end %>
 
 </div>
