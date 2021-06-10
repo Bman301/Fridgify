@@ -1,7 +1,7 @@
 export const record = () => {
   if (typeof webkitSpeechRecognition !== "undefined") {
     let mic = document.getElementById("microphone");
-    if (mic != null) {
+    if (mic) {
       mic.hidden = false;
       let recognition = new webkitSpeechRecognition();
       let on = false;

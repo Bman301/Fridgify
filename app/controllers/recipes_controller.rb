@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   end
 
   def api_call
-    api_key = "f84d78d0814b41d186c566ed5f995c11"
+    api_key = "5752210e8b7c418793d2e6f697c9b620"
     recipes = [];
     @saved_recipes = [];
 
