@@ -67,10 +67,11 @@ a {
     <p>Login or signup to rate this recipe</p>
     <% end %>
 
-    
+
       <div id="thisrating" data-rating="<%= @recipe.rating %>">
       <div class="align-items-center">
-        <p>Global rating
+        <p>
+           <p class="mb-3">Global rating</p>
           <select class="br-widget" id="diplay-rating">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -148,7 +149,7 @@ a {
 
     <div class="recipe-steps">
       <h2>Delicious and nutritious</h2>
-        <p> 
+        <p>
           <%= @recipe.description.html_safe %>
         </p>
     </div>
