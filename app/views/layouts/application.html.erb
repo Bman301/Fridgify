@@ -31,7 +31,7 @@
   </head>
 
   <body data-controller="<%=params[:controller] %>" data-action="<%=params[:action] %>" >
-
+<div class="content">
 <% if content_for? :nav %>
   <%= content_for :nav %>
 <% else %>
@@ -43,7 +43,7 @@
     <%= render 'shared/flashes' %>
   
     <%= yield %>
-    
+</div>
     <%= render 'shared/footer' %>
   </body>
 </html>
