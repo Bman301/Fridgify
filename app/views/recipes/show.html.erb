@@ -110,9 +110,13 @@ a {
 
           <div class="r-spec">
             <i class="fas fas-show fa-tachometer-alt" style="font-size: 30px"></i>
-            <p>
-              <%= @recipe.difficulty_level %>
-            </p>
+            <% if @recipe.difficulty_level.to_i >= 45 %>
+            <p> Hard </p>
+            <% elsif @recipe.difficulty_level.to_i >= 20 && @recipe.difficulty_level.to_i < 45 %>
+            <p> Meduim </p>
+            <% else %>
+            <p> Easy </p>
+            <% end %>
           </div>
 
           <div class="r-spec">
