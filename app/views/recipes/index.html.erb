@@ -13,7 +13,7 @@
         <div class="input-bar w-75">
           <%= form_tag recipes_path, method: :get do %>
           <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 mr-0 pr-0",  id:"SpeechToText",
-               placeholder: "What's in your fridge?", required: true %>
+               placeholder: "#{@user_ingredients.join}", required: true %>
         </div>
         <div class="s-button">
           <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
