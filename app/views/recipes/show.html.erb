@@ -5,27 +5,25 @@ a {
    color: inherit;
 }
 </style>
-
- <div class="container" id="advanced-search">
-   <div class="searchindex bg-white w-100 d-flex justify-content-around" style="width: 75%">
+  <div class="container" id="advanced-search">
+   <div class="searchindex bg-white w-100 d-flex justify-content-around p-2" style="width: 75%">
         <div class="mic" id="voice-recognition">
           <i id="microphone" class="fas fa-microphone btn"></i>
         </div>
         <div class="input-bar w-75">
           <%= form_tag recipes_path, method: :get do %>
-          <%= text_field_tag :query, '', class: "form-control border border-white rounded w-75 mr-0 pr-0",  id:"SpeechToText",
+          <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 mr-0 pr-0",  id:"SpeechToText",
                placeholder: "What's in your fridge?", required: true %>
         </div>
         <div class="s-button">
           <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
           <% end %>
         </div>
-        <div class="hijodeputa">
+        <div class="hijodeputa mr-2">
           <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
         </div>
     </div>
-        
-    </div>
+  </div>
 
 <div class="recipe-wrapper mx-auto" style="width: 1280">
 
@@ -35,31 +33,21 @@ a {
     </div>
     <div>
 
-
-
-      <% if !current_user.nil? %>
-
-
-                                   <% if @recipe.cookbooks.where(user: current_user).empty?  %>
-                                      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
-                                           <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
-                                           <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none; color: inherit;"><i class="far fa-bookmark mr-2" style="color: inherit;" ></i></li>
-                                            </a>
-                                       <%end%>
-
-                                 <% else %>
-                                     <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
-                                           <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
-                                          <li class="tag__item" style="font-size: 35px;list-style-type:none;text-decoration: none"><i class="fas fa-bookmark mr-2"></i></li>
-                                            </a>
-                                       <%end%>
-
-                                 <% end %>
-
-
-
-      <% end %>
-
+    <% if !current_user.nil? %>
+    <% if @recipe.cookbooks.where(user: current_user).empty?  %>
+      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+        <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
+      <li class="tag__item" style="color:black;font-size: 35px;list-style-type:none; color: inherit;"><i class="far fa-bookmark mr-2" style="color: inherit;" ></i></li>
+        </a>
+    <%end%>
+    <% else %>
+    <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
+      <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
+    <li class="tag__item" style="font-size: 35px;list-style-type:none;text-decoration: none"><i class="fas fa-bookmark mr-2"></i></li>
+      </a>
+    <%end%>
+    <% end %>
+    <% end %>
     </div>
   </div>
 
@@ -73,17 +61,17 @@ a {
     </div>
 
     <% else %>
-    <p>Thanks for rating this recipe!</p>
+    <p>Updated rating!</p>
     <% end %>
     <% else %>
     <p>Login or signup to rate this recipe</p>
     <% end %>
 
-    <div class="align-items-bottom width:50%">
-      <div id="thisrating" data-rating="<%= @recipe.rating %>"></div>
+    
+      <div id="thisrating" data-rating="<%= @recipe.rating %>">
       <div class="align-items-center">
         <p>Global rating
-          <select id="diplay-rating">
+          <select class="br-widget" id="diplay-rating">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -148,20 +136,21 @@ a {
           </div>
 
         </div>
+    </div>
+  </div>
 
-</div>
-
-      </div>
-    <div class="mt-3 ml-2 mr-2">
-     <h2 class="123">- Lets do it!</h2>
+    <div class="recipe-steps">
+     <h2>Recipe: step by step</h2>
       <p>
         <%=@recipe.steps.html_safe  %>
       </p>
     </div>
 
     <div class="recipe-steps">
-
-    <p> <%= @recipe.description.html_safe %> </p>
-  </div>
+      <h2>Delicious and nutritious</h2>
+        <p> 
+          <%= @recipe.description.html_safe %>
+        </p>
+    </div>
     </div>
   </div>
