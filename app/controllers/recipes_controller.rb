@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     end
 
     @recipes = @recipes.flatten - [nil]
-    @recipes = @recipes.take(6)
+    @recipes = @recipes.take(10)
 
   end
 
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   end
 
   def api_call
-    api_key = "8125a13e97764742a7910c93056f7fed"
+    api_key = "f84d78d0814b41d186c566ed5f995c11"
     recipes = [];
     @saved_recipes = [];
 
