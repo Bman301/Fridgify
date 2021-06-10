@@ -17,7 +17,7 @@ const initStarRating = () => {
     if (score){
       const score2 = score.dataset.rating;
       var number = parseFloat(score2);
-      var number = number / 20;
+      var number = number;
       $('#diplay-rating').barrating({
         theme: 'css-stars',
         initialRating: number,
