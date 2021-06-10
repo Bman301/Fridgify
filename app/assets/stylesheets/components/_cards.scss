@@ -48,13 +48,13 @@
                     color: #ffffff;
 
                     &.dark {
-                        background-color: #18151f;
+                        background-color: white;
                     }
                     &.light {
-                        background-color: #e1e5ea;
+                        background-color: white;
                     }
                     .t-dark {
-                        color: #18151f;
+                        color: white;
                     }
                     .small {
                         font-size: 80%;
@@ -78,7 +78,7 @@
                         height: 10px;
                         margin: 10px 0;
                         border-radius: 5px;
-                        background-color: #424242;
+                    
                         transition: width 0.2s ease;
                     }
                     .postcard__text {}
@@ -154,7 +154,7 @@
                             content: "";
                             position: absolute;
                             display: block;
-                            background: #18151f;
+                            background: white;
                             top: -20%;
                             height: 130%;
                             width: 55px;
@@ -187,12 +187,12 @@
                     }
                     .postcard.dark {
                         .postcard__text:before {
-                            background: #18151f;
+                            background:white;
                         }
                     }
                     .postcard.light {
                         .postcard__text:before {
-                            background: #e1e5ea;
+                            background:white;
                         }
                     }
                 }
@@ -200,7 +200,7 @@
                 
                 .postcard .postcard__tagbox .green.play:hover {
                     background: $main-green;
-                    color: black;
+                    color: white;
                 }
                 
                 .green .postcard__title:hover {
@@ -261,7 +261,7 @@
                 
                 .postcard .postcard__tagbox .yellow.play:hover {
                     background: $main-yellow;
-                    color: black;
+                    color: white;
                 }
                 
                 .yellow .postcard__title:hover {
