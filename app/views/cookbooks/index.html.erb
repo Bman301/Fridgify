@@ -33,8 +33,13 @@
                                 <ul class="postcard__tagbox mb-3">
                                             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= Recipe.find(cookbook.recipe_id).prep_time %></li>
                                             <li class="tag__item"><i class="fas fa-star mr-2"></i><%= (Recipe.find(cookbook.recipe_id).rating)/20 %> / 5</li>
-                                            <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i><%= Recipe.find(cookbook.recipe_id).difficulty_level %></li>
-                                
+                                            <% if Recipe.find(cookbook.recipe_id).difficulty_level.to_i >= 45 %>
+                                            <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i>Hard</li>
+                                            <% elsif Recipe.find(cookbook.recipe_id).difficulty_level.to_i >= 20 && Recipe.find(cookbook.recipe_id).difficulty_level.to_i < 45 %>
+                                            <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i>Medium</li>
+                                            <% else %>
+                                            <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i>Easy</li>
+                                            <% end %>
                  
                                      <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(cookbook.recipe_id, user_id: current_user), html: { "data-id": cookbook.recipe_id, class: :selectable, :'data-type' => 'json' } do |f| %>
                                            <button type="submit" class="tag__item" id="button-<%= cookbook.recipe_id %>">
