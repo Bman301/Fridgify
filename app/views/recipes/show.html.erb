@@ -36,7 +36,7 @@ a {
 
                                  <% end %>
 
-      
+
 
       <% end %>
 
@@ -89,11 +89,11 @@ a {
       <div class="right-container">
         <h2 style="text-align: center">Ingredients</h2>
         <div class="r-ingredients"style="text-align: left; list-style:none">
-          
+
             <ul>
               <p>
-                <% @recipe.recipe_ingredients.each do |recipe_ingredient| %> 
-                
+                <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+
                   <li> <strong> <%=  recipe_ingredient.ingredient.name.capitalize %> :</strong> &nbsp  <%= recipe_ingredient.amount %></li>
                 <% end %>
               </p>
@@ -103,36 +103,41 @@ a {
         <div class="specs-recipe">
           <div class="r-spec ">
             <i class="far fas-show fa-clock" style="font-size: 30px"></i>
-            <p> 
-              <%= @recipe.prep_time %> 
+            <p>
+              <%= @recipe.prep_time %>
             </p>
           </div>
 
           <div class="r-spec">
             <i class="fas fas-show fa-tachometer-alt" style="font-size: 30px"></i>
-            <p> 
+            <p>
               <%= @recipe.difficulty_level %>
             </p>
           </div>
 
           <div class="r-spec">
             <i class="fas fas-show fa-user" style="font-size: 30px"></i>
-            <p> 
+            <p>
               <%= @recipe.serving_size %>
             </p>
-            
+
           </div>
-          
+
         </div>
 
 </div>
 
       </div>
-             <div class="recipe-steps">
-    <h2 class="123">Lets do it!</h2>
+    <div class="mt-3 ml-2 mr-2">
+     <h2 class="123">- Lets do it!</h2>
+      <p>
+        <%=@recipe.steps.html_safe  %>
+      </p>
+    </div>
+
+    <div class="recipe-steps">
+
     <p> <%= @recipe.description.html_safe %> </p>
   </div>
     </div>
   </div>
-
-  
