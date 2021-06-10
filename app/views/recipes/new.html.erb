@@ -1,0 +1,33 @@
+<div class="container">
+<%= form_for @recipe do |f| %>
+  <div id="d-flex flex-column justify-content-end align-items-end">
+    <div class="fields">
+      Title: <%= f.text_field :title %><br />
+    </div>
+    <div class="fields">
+      Image : <%= f.text_field :image%><br />
+    </div>
+    <div class="fields">
+      Serving Size : <%= f.text_field :serving_size%><br />
+    <div class="fields">
+      Comment : <%= f.text_area :description %><br />
+    </div>
+    <div class="fields">
+      Preparation Time : <%= f.text_field :prep_time %><br />
+    </div>
+    <div class="fields">
+      Description : <%= f.text_area :description %><br /></div>
+    </div>
+    <div class="fields">
+      Difficulty Level : <%= f.text_field :serving_size%><br />
+    </div>
+    <div class="fields">
+      Rating : <%= f.number_field :rating, step: :any%><br />
+    </div>
+  </div>
+
+
+  <%= f.submit %>
+<% end %>
+
+</div>

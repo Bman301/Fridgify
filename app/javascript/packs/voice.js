@@ -1,17 +1,19 @@
 export const record = () => {
   if (typeof webkitSpeechRecognition !== "undefined") {
     let mic = document.getElementById("microphone");
-    mic.hidden = false;
-    let recognition = new webkitSpeechRecognition();
-    let on = false;
+    if (mic != null) {
+      mic.hidden = false;
+      let recognition = new webkitSpeechRecognition();
+      let on = false;
 
-    recognition.lang = "en-US";
-    recognition.continuous = true;
+      recognition.lang = "en-US";
+      recognition.continuous = true;
 
-    recognition.onresult = function (event) {
-      document.getElementById("SpeechToText").value =
-        event.results[0][0].transcript;
-    };
+      recognition.onresult = function (event) {
+        document.getElementById("SpeechToText").value =
+          event.results[0][0].transcript;
+      };
+    }
 
     const voice = document.getElementById("voice-recognition");
 
