@@ -6,6 +6,26 @@ a {
 }
 </style>
 
+ <div class="container" id="advanced-search">
+   <div class="searchindex bg-white w-100 d-flex justify-content-around" style="width: 75%">
+        <div class="mic" id="voice-recognition">
+          <i id="microphone" class="fas fa-microphone btn"></i>
+        </div>
+        <div class="input-bar w-75">
+          <%= form_tag recipes_path, method: :get do %>
+          <%= text_field_tag :query, '', class: "form-control border border-white rounded w-75 mr-0 pr-0",  id:"SpeechToText",
+               placeholder: "What's in your fridge?", required: true %>
+        </div>
+        <div class="s-button">
+          <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
+          <% end %>
+        </div>
+        <div class="hijodeputa">
+          <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
+        </div>
+    </div>
+        
+    </div>
 
 <div class="recipe-wrapper mx-auto" style="width: 1280">
 
