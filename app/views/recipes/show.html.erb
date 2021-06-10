@@ -140,12 +140,14 @@ a {
     </div>
   </div>
 
+  <% if @recipe.steps %>
     <div class="recipe-steps">
      <h2>Recipe: step by step</h2>
       <p>
-        <%=@recipe.steps.html_safe  %>
+          <%=@recipe.steps.html_safe  %>
       </p>
     </div>
+  <% end %>
 
     <div class="recipe-steps">
       <h2>Delicious and nutritious</h2>
