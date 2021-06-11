@@ -48,7 +48,7 @@
         </a>
         <div class="postcard_text_container" style="background-color:white" id="card-<%= recipe.id %>">
           <h1 class="postcard__title mt-4"><a href="<%=recipe_path(recipe.id)%>"
-              style="color:black;text-decoration: none;"><%= recipe.title %></a></h1>
+              style="color:black;text-decoration: none;"><%= recipe.title.truncate_words(5) %></a></h1>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt mb-3" style="color:grey">
             <%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
