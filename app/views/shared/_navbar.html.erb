@@ -13,9 +13,12 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse d-flex justify-content-end w-100 mr-5 " id="navbarSupportedContent">
       <% if user_signed_in? %>
+       <ul class="navbar-nav m-0 d-flex w-100 justify-content-end">
+        <div class= "d-flex justify-content-center align-items-center" id="navTitle2">
+          <%= link_to "Create your Recipes", "/recipes/new"%>
+        </div>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link", "data-turbolinks": false %>
         </li>
