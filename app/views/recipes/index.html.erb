@@ -40,9 +40,9 @@
       <article class="postcard postcard-styling">
         <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
           <% if recipe.image.nil? %>
-          <img class="postcard__img pr-4" src="<%= asset_path('food-404.jpg') %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= asset_path('food-404.jpg') %>" alt="Image Title" />
           <% else %>
-          <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= recipe.image %>" alt="Image Title" />
           <% end %>
         </a>
         <div class="postcard_text_container" style="background-color:white" id="card-<%= recipe.id %>">
