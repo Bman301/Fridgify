@@ -13,7 +13,7 @@
         <div class="input-bar w-75">
           <%= form_tag recipes_path, method: :get do %>
           <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 mr-0 pr-0",  id:"SpeechToText",
-               placeholder: "What's in your fridge?", required: true %>
+               placeholder: "#{params[:query]}", required: true %>
         </div>
         <div class="hijodeputa w-25">
           <%= link_to "Advanced Search", recipes_api_call_path(query: params[:query])  %>
@@ -21,9 +21,6 @@
         <div class="s-button">
           <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
           <% end %>
-        </div>
-        <div class="hijodeputa mr-2">
-          <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
         </div>
     </div>
 
