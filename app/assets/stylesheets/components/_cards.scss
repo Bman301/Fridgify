@@ -327,8 +327,12 @@
                         }
                         
                         .rating-wrapper {
-                            display: flex;
+                            display: inline;
+                            flex-direction: column;
                             justify-content: space-evenly;
+                            text-align: center;
+                            
+                        
                         }
                         
                         .stars-reviews {
@@ -365,7 +369,7 @@
                         }
                         
                         .left-container {
-                            width: 60%;
+                            width: 50%;
                             margin-right: 10px;
                         }
                         
@@ -402,8 +406,8 @@
                         
                         .recipe-steps {
                             margin-top: 5px;
-                            padding: 10px;
-                            border: 5px #bda06a;
+                            padding: 20px;
+                            border: #bda06a;
                         }
                         
                         .postcard-styling {
@@ -414,7 +418,11 @@
                         .fas-show {
                             font-size: 40px;
                         }
-                        
+
+                        h2 {
+                            font-size: 32px;
+                            text-align: center;
+                        }
                         @media screen and (max-width: 600px) {
                             .recipe-wrapper {
                                 padding: 10px;

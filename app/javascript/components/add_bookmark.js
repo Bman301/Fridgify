@@ -54,12 +54,12 @@ const addBookmark = () => {
 
                 if (data.recipe_id){
                                 
-                    buttonId.innerHTML = '<li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="fas fa-bookmark mr-2"></i></li>';
+                    buttonId.innerHTML = ' <li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: white;"><i class="fas fa-bookmark mr-2" style="color: white;" ></i>';
 
                 }
                 else{
 
-                    buttonId.innerHTML = '<li class="tag__item" style="font-size: 35px;list-style-type:none"><i class="far fa-bookmark mr-2"></i></li>';
+                    buttonId.innerHTML = '<li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: white;"><i class="far fa-bookmark mr-2" style="color: white;" ></i>';
 
                 }
                             

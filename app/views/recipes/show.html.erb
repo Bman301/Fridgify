@@ -26,9 +26,9 @@ a {
   </div>
 
 
-<div class="recipe-wrapper mx-auto" >
+<div class="recipe-wrapper mx-auto" style="max-width: 900px" >
 
- <div class="container-fluid mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @recipe.image %>'); background-size: cover; border-radius: 30px 30px 0px 0px; ">
+ <div class="mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @recipe.image %>'); background-size: cover; border-radius: 30px 30px 0px 0px; ">
 
             <div class="row d-flex justify-content-end">
             
@@ -37,13 +37,13 @@ a {
               <% if @recipe.cookbooks.where(user: current_user).empty?  %>
                 <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
                   <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
-                <li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: inherit;"><i class="far fa-bookmark mr-2" style="color: inherit;" ></i></li>
+                <li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: white;"><i class="far fa-bookmark mr-2" style="color: white;" ></i></li>
                   </a>
               <%end%>
               <% else %>
               <%= simple_form_for :cookbooks, url: recipe_cookbooks_path(@recipe.id, user_id: current_user), html: { "data-id": @recipe.id, class: :selectable, :'data-type' => 'json' } do |f| %>
                 <a type="submit" class="tag__item" id="button-<%= @recipe.id %>">
-               <li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: inherit;"><i class="far fa-bookmark mr-2" style="color: inherit;" ></i></li>
+               <li class="tag__item m-4" style="color:black;font-size: 35px;list-style-type:none; color: white;"><i class="far fa-bookmark mr-2" style="color: white;" ></i></li>
                 </a>
               <%end%>
               <% end %>
@@ -58,20 +58,20 @@ a {
                     <div class="row d-flex justify-content-around mt-5">
             
 
-  <div class="rating-wrapper">
+  <div class="rating-wrapper mb-5">
     <% if !current_user.nil? %>
     <% if  Rating.where(user_id: current_user, recipe_id: @recipe.id).empty? %>
     
-     <span style="color:white">My rating</span>&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %><br>
+     <span style="color:white">My rating</span>&nbsp; <%= simple_form_for([@recipe, @rating], html: { class: "review_form" }) do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: false %>
       <% end %>
    
 
     <% else %>
-    <p>Thanks for rating this recipe!</p>
+    <p style="color:white">Thanks for rating this recipe!</p>
     <% end %>
     <% else %>
-    <p>Login or signup to rate this recipe</p>
+    <p style="color:white">Login or signup to rate this recipe</p>
     <% end %>
 
 </div>
@@ -122,7 +122,7 @@ a {
                         <div class="r-spec ">
                           <i class="far fas-show fa-clock" style="font-size: 30px"></i>
                           <p>
-                            <%= @recipe.prep_time %>
+                            <%= @recipe.prep_time %> Min
                           </p>
                         </div>
               
@@ -140,7 +140,7 @@ a {
                         <div class="r-spec">
                           <i class="fas fas-show fa-user" style="font-size: 30px"></i>
                           <p>
-                            <%= @recipe.serving_size %>
+                            <%= @recipe.serving_size %> Serving
                           </p>
               
                         </div>
