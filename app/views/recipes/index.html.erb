@@ -5,26 +5,25 @@
 </style>
 
 
-  <div class="container" id="advanced-search">
+ <div class="container" id="advanced-search">
    <div class="searchindex bg-white w-100 d-flex justify-content-around p-2" style="width: 75%">
         <div class="mic" id="voice-recognition">
-          <i id="microphone" class="fas fa-microphone btn" hidden></i>
+          <i id="microphone" class="fas fa-microphone btn"></i>
         </div>
         <div class="input-bar w-75">
           <%= form_tag recipes_path, method: :get do %>
           <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 mr-0 pr-0",  id:"SpeechToText",
-               placeholder: "#{params[:query]}", required: true %>
+               placeholder: "What's in your fridge?", required: true %>
+        </div>
+        <div class="hijodeputa w-25">
+          <%= link_to "Advanced Search", recipes_api_call_path(query: params[:query])  %>
         </div>
         <div class="s-button">
           <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
           <% end %>
         </div>
-        <div class="hijodeputa mr-2">
-          <%= link_to "Advance Search", recipes_api_call_path(query: params[:query])  %>
-        </div>
     </div>
-
-    </div>
+  </div>
 
   <% if @recipes.count == 0 %>
   <div class="row mx-auto text-center d-flex justify-content-center mt-5">
