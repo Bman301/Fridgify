@@ -15,10 +15,8 @@
 
 
   <div class="collapse navbar-collapse w-50 mr-5 d-flex justify-content-end " id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-
       <% if user_signed_in? %>
-    <ul class="navbar-nav m-0 d-flex w-100 justify-content-end">
+        <ul class="navbar-nav m-0 d-flex w-100 justify-content-end">
         <div class= "d-flex justify-content-center align-items-center" id="navTitle1">
           <%= link_to "Create your Recipes", "/recipes/new"%>
         </div>
