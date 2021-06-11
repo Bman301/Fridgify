@@ -1,52 +1,69 @@
-<div class="container d-flex flex-column justify-content-center align-items-center">
-<%= form_for @recipe do |f| %>
-  <div class="">
-    <div class=" d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3">Title:</p>
-      <%= f.text_field :title %><br />
+<div class="container w-50 p-5 bg-white mb-5 border rounded d-flex flex-column justify-content-center align-items-center">
+  <h2 class="mb-5">Create your recipes!</h2>
+  <%= form_for @recipe do |f| %>
+    <div class="">
+      <div class=" d-flex justify-content-between align-items-center  mb-3">
+        <h5 class="mr-3">Title:</h5>
+        <div>
+          <%= f.text_field :title %><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center  mb-3">
+        <h5 class="mr-3">Image:</h5>
+        <div>
+          <%= f.text_field :image%><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mr-3">Serving Size: </h5>
+        <div>
+          <%= f.text_field :serving_size%><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center  mb-3">
+        <h5 class="mr-3">Preparation Time:</h5>
+        <div>
+          <%= f.text_field :prep_time %><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center  mb-3">
+        <h5 class="mr-3">Difficulty Level:</h5>
+        <div>
+          <%= f.text_field :serving_size%><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-between mb-3">
+        <h5 class="mr-3"> Rating:</h5>
+        <div>
+          <%= f.number_field :rating, step: :any%><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-between mb-3">
+        <h5 class="mr-3"> Description:</h5>
+        <div>
+          <%= f.text_area :description %><br />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mr-3">Comment:</h5>
+        <div>
+          <%= f.text_area :description %><br />
+        </div>
+      </div>
+
     </div>
 
-    <div class="d-flex justify-content-end align-items-center mb-3">
-       <p class="mr-3">Image:</p>
-       <%= f.text_field :image%><br />
+    <div class="d-flex justify-content-center align-items-between mb-3">
+      <%= f.submit class:"btn btn btn-dark rounded-pill" %>
     </div>
 
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3">Serving Size: </p>
-      <%= f.text_field :serving_size%><br />
-    </div>
-
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3">Preparation Time:</p>
-      <%= f.text_field :prep_time %><br />
-    </div>
-
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3">Difficulty Level:</p>
-       <%= f.text_field :serving_size%><br />
-    </div>
-
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3"> Rating:</p>
-      <%= f.number_field :rating, step: :any%><br />
-    </div>
-
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3"> Description:</p>
-      <%= f.text_area :description %><br /></div>
-    </div>
-
-    <div class="d-flex justify-content-end align-items-center mb-3">
-      <p class="mr-3">Comment:</p>
-       <%= f.text_area :description %><br />
-    </div>
-
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center mb-3">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+  <% end %>
 
 </div>
