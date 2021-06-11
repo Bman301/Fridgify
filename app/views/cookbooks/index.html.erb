@@ -20,12 +20,12 @@
            <div class="col-lg-12 col-xl-6">
             <article class="postcard postcard-styling">
                 <%= link_to recipe_path(cookbook.recipe_id), class: "postcard__img_link" do %>
-                <img class="postcard__img pr-4" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
+                <img class="postcard__img" src="<%= Recipe.find(cookbook.recipe_id).image %>" alt="Image Title" />
                 <% end %>
 
 
                             <div class="postcard_text_container" style="background-color:white">
-                                <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title %></a></h1>
+                                <h1 class="postcard__title mt-4"><a href="<%=recipe_path (cookbook.recipe_id)%>" style="color:black;text-decoration: none;"><%= Recipe.find(cookbook.recipe_id).title.truncate_words(5) %></a></h1>
                                 <div class="postcard__bar"></div>
                                 <% @descrip = Recipe.find(cookbook.recipe_id).description.truncate_words(25) %>
                                 <div class="postcard__preview-txt mb-3" style="color:grey"><%= strip_tags(@descrip) %></div
