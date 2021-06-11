@@ -1,29 +1,45 @@
 .navbar-lewagon {
-    justify-content: space-between;
-    background-color: none;
+  justify-content: space-between;
+  background-color: none;
 }
 
 .navbar-lewagon .navbar-collapse {
-    flex-grow: 0;
+  flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-    width: 40px;
+  width: 40px;
 }
 
 .navbar-text {
-    color: #BDA06A;
-    font-family: 'Montserrat', sans-serif;
+  color: #bda06a;
+  font-family: "Montserrat", sans-serif;
 }
 
 .bg-info {
-    background-color: #BDA06A!important;
+  background-color: #bda06a !important;
 }
 
 .text-info {
-    color: #BDA06A !important;
+  color: #bda06a !important;
 }
 
 .btn btn-info {
-    border-color: #BDA06A;
+  border-color: #bda06a;
+}
+
+#navTitle1 a {
+  color: #bda06a;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  margin-right: 1rem;
+}
+
+#navTitle2 a {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  margin-right: 1rem;
+}
+
+.nav-item {
+  list-style-type: none;
 }
