@@ -91,7 +91,7 @@
                                 justify-content: center;
                                 .tag__item {
                                     display: inline-block;
-                                    background: rgba(83, 83, 83, 0.4);
+                                    background-color:#bda06a ;
                                     border-radius: 3px;
                                     padding: 2.5px 10px;
                                     margin: 0 5px 5px 0;
@@ -110,7 +110,7 @@
                                 right: 0;
                                 bottom: 0;
                                 left: 0;
-                                background-image: linear-gradient(-70deg, #424242, transparent 50%);
+                                // background-image: linear-gradient(-70deg, #424242, transparent 50%);
                                 opacity: 1;
                                 border-radius: 10px;
                             }
@@ -129,15 +129,18 @@
                                     justify-content: start;
                                 }
                                 .postcard__img {
-                                    max-width: 300px;
+                                    width: 300px;
                                     max-height: 100%;
                                     transition: transform 0.3s ease;
+                                    
                                 }
+                                
                                 .postcard__text {}
                                 /* own css */
                                 .postcard_text_container {
                                     position: relative;
                                     width: 100%;
+                                    margin-left: 20px;
                                     .postcard__tagbox {
                                         position: absolute;
                                         bottom: 0;
@@ -185,7 +188,7 @@
                             }
                             .postcard.dark {
                                 .postcard__text:before {
-                                    background: #18151f;
+                                    background: white;
                                 }
                             }
                             .postcard.light {
@@ -483,3 +486,5 @@
                                 background-image: linear-gradient( 80deg, $main-yellow-rgb-015, transparent 50%);
                             }
                         }
+
+                     

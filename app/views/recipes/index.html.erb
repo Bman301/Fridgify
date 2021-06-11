@@ -5,15 +5,18 @@
 </style>
 
 
-  <div class="container" id="advanced-search">
+ <div class="container" id="advanced-search">
    <div class="searchindex bg-white w-100 d-flex justify-content-around p-2" style="width: 75%">
         <div class="mic" id="voice-recognition">
-          <i id="microphone" class="fas fa-microphone btn" hidden></i>
+          <i id="microphone" class="fas fa-microphone btn"></i>
         </div>
         <div class="input-bar w-75">
           <%= form_tag recipes_path, method: :get do %>
           <%= text_field_tag :query, '', class: "form-control border border-white rounded w-100 mr-0 pr-0",  id:"SpeechToText",
-               placeholder: "#{params[:query]}", required: true %>
+               placeholder: "What's in your fridge?", required: true %>
+        </div>
+        <div class="hijodeputa w-25">
+          <%= link_to "Advanced Search", recipes_api_call_path(query: params[:query])  %>
         </div>
         <div class="s-button">
           <%= submit_tag "Search",  class: "btn btn btn-dark rounded-pill",  id: "formButton" %>
@@ -42,20 +45,20 @@
       <article class="postcard postcard-styling">
         <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
           <% if recipe.image.nil? %>
-          <img class="postcard__img pr-4" src="<%= asset_path('food-404.jpg') %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= asset_path('food-404.jpg') %>" alt="Image Title" />
           <% else %>
-          <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= recipe.image %>" alt="Image Title" />
           <% end %>
         </a>
         <div class="postcard_text_container" style="background-color:white" id="card-<%= recipe.id %>">
           <h1 class="postcard__title mt-4"><a href="<%=recipe_path(recipe.id)%>"
-              style="color:black;text-decoration: none;"><%= recipe.title %></a></h1>
+              style="color:black;text-decoration: none;"><%= recipe.title.truncate_words(5) %></a></h1>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt mb-3" style="color:grey">
             <%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
           <ul class="postcard__tagbox mb-3">
             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
-            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating / 20 %>&nbsp/ 5</li>
+            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating %>&nbsp/ 5</li>
             <% if recipe.difficulty_level.to_i >= 45 %>
             <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i>Hard</li>
             <% elsif recipe.difficulty_level.to_i >= 20 && recipe.difficulty_level.to_i < 45 %>

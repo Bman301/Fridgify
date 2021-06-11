@@ -23,9 +23,9 @@
       <article class="postcard postcard-styling">
         <a class="postcard__img_link" href="<%=recipe_path(recipe.id)%>">
           <% if recipe.image.nil? %>
-          <img class="postcard__img pr-4" src="<%= asset_path('food-404') %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= asset_path('food-404') %>" alt="Image Title" />
           <% else %>
-          <img class="postcard__img pr-4" src="<%= recipe.image %>" alt="Image Title" />
+          <img class="postcard__img" src="<%= recipe.image %>" alt="Image Title" />
           <% end %>
         </a>
         <div class="postcard_text_container" style="background-color:white" id="card-<%= recipe.id %>">
@@ -36,7 +36,7 @@
             <%= strip_tags(recipe.description.truncate_words(25)) %></div><br><br>
           <ul class="postcard__tagbox mb-3">
             <li class="tag__item"><i class="fas fa-clock mr-2"></i><%= recipe.prep_time %></li>
-            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating / 20 %></li>
+            <li class="tag__item"><i class="fas fa-star mr-2"></i><%= recipe.rating.to_f / 20 %></li>
             <% if recipe.difficulty_level.to_i > 45 %>
             <li class="tag__item"><i class="fas fa-cookie-bite mr-2"></i>Hard</li>
             <% elsif recipe.difficulty_level.to_i >= 25 && recipe.difficulty_level.to_i < 45 %>
